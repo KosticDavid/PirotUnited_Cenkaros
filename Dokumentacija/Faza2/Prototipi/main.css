@@ -1,0 +1,329 @@
+*
+{
+	box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+body
+{
+	margin:0px;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+div#header
+{
+	width:100vw;
+	height: 20vh;
+	display: block;
+}
+
+div#header img
+{
+	width:20vh;
+	height: 20vh;
+	float: left;
+}
+
+div#header div#title
+{
+	width:calc(100vw - 40vh);
+	line-height: 20vh;
+	font-size: 10vh;
+	color:#887575;
+	text-align: center;
+	float:left;
+}
+
+div#nav
+{
+	width:100vw;
+	height: 5vh;
+}
+
+div#nav div#nav-container
+{
+	display: inline-block;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+div#nav div#nav-container a.nav-element
+{
+	float:left;
+	color:#f6e8e8;
+	line-height: 5vh;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 2vh;
+}
+
+a.nav-element:hover
+{
+	background-color: #796767;
+}
+
+div#content
+{
+	width:100vw;
+	min-height: 65vh;
+}
+
+div#footer
+{
+	width: 100vw;
+	height: 10vh;
+	font-size: 3vh;
+	text-align: center;
+	padding-top: 3.5vh;
+	color: #f6e8e8;
+}
+
+.bg-color1
+{
+	background-color: #f6e8e8;
+}
+
+.bg-color2
+{
+	background-color:#887575;
+}
+
+form#cuvanje_liste_form
+{
+	width:40vw;
+	margin:auto;
+}
+
+form#cuvanje_liste_form *
+{
+	font-size: 3vh;
+	margin-top: 1.5vh;
+	margin-bottom: 1.5vh;
+}
+
+p#cuvanje_liste_ime_label
+{
+	width: 100%;
+	text-align: center;
+}
+
+input#cuvanje_liste_ime_input, button#cuvanje_liste_button
+{
+	width:70%;
+	margin-left: 15%;
+}
+
+div.cuvanje_liste_content
+{
+	padding-top: 15vh;
+}
+
+form#prijava_form
+{
+
+	width:40vw;
+	margin-left: 30vw;
+}
+
+form#prijava_form *
+{
+	font-size: 3vh;
+	margin-top: 1.5vh;
+	margin-bottom: 1.5vh;
+}
+
+p.prijava_paragraph
+{
+	width: 100%;
+	text-align: center;
+}
+
+input.prijava_input, button.prijava_button
+{
+	width: 70%;
+	margin-left: 15%;
+}
+
+div.prijava_content
+{
+	padding-top: 12vh;
+}
+
+div.main_kupac_links
+{
+	padding-top: 15vh;
+	width:50vw;
+	margin-left: 25vw;
+}
+
+a.main_kupac_link
+{
+	font-size: 3vh;
+	display: inline-block;
+	width: 50vw;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	text-align: center;
+}
+
+div.registracija_content
+{
+	padding: 2vh 0vh;
+}
+
+form.registracija_form
+{
+	width:40vw;
+	margin-left: 30vw;
+}
+
+form.registracija_form *
+{
+	font-size: 3vh;
+	margin-top: 1.5vh;
+	margin-bottom: 1.5vh;
+}
+
+form.registracija_form p
+{
+	width:100%;
+	display: inline-block;
+	text-align: center;
+}
+
+form.registracija_form input, form.registracija_form select, form.registracija_form button
+{
+	width:70%;
+	margin-left: 15%;
+}
+
+div.sacuvane_liste table, div.sacuvane_liste td, div.sacuvane_liste tr
+{
+	border-collapse: collapse;
+	border:3px solid #887575;
+	font-size: 3vh;
+}
+
+div.sacuvane_liste table
+{
+	width:80vw;
+}
+
+div.sacuvane_liste
+{
+	padding-left: 10vw;
+	padding-top: 10vh;
+}
+
+div.sacuvane_liste td
+{
+	padding:5px;
+}
+
+div.pregled_liste table, div.pregled_liste td, div.pregled_liste tr
+{
+	border-collapse: collapse;
+	border:3px solid #887575;
+	font-size: 3vh;
+}
+
+div.pregled_liste table
+{
+	width:80vw;
+}
+
+div.pregled_liste
+{
+	padding-left: 10vw;
+	padding-top: 5vh;
+}
+
+div.pregled_liste td
+{
+	padding:5px;
+}
+
+div.pregled_liste *
+{
+	font-size: 3vh;
+}
+
+div.pregled_liste input[type="text"], div.pregled_liste button
+{
+	margin-bottom: 10px;
+	width:60vw;
+	margin-left: 10vw;
+}
+
+div.pregled_liste p
+{
+	width:80vw;
+	text-align: center;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+}
+
+div.pregled_liste input[type="file"]
+{
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: 1vh;
+	margin-bottom: 3vh;
+	text-align: center;
+}
+
+div.pregled_liste input[type="number"]
+{
+	width:10vw;
+}
+
+div.pregled_liste table tr td:nth-child(1)
+{
+	width:4vw;
+}
+
+div.pregled_liste table tr td:nth-child(3)
+{
+	width:10vw;
+}
+
+div.pregled_liste table tr td:nth-child(4)
+{
+	width:10vw;
+}
+
+div.zahtevi table, div.zahtevi td, div.zahtevi tr
+{
+	border-collapse: collapse;
+	border:3px solid #887575;
+}
+
+div.zahtevi table
+{
+	width:90vw;
+}
+
+div.zahtevi
+{
+	padding-left: 5vw;
+	padding-top: 5vh;
+}
+
+div.zahtevi td
+{
+	padding:5px;
+}
+
+div.zahtevi *
+{
+	font-size: 2.5vh;
+}
+
+div.zahtevi table tr td:nth-child(1)
+{
+	width:3vw;
+}
