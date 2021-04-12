@@ -7,6 +7,7 @@
 	<title></title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+	<script src="main.js"></script>
 </head>
 <body class="bg-color1">
 	<div id="header">
@@ -15,16 +16,19 @@
 	</div>
 	<div id="nav" class="bg-color2">
 		<div id="nav-container">
-			<a class="nav-element">NAV1</a>
+			<a class="nav-element" href="main_kupac.html">Pocetna</a>
 			<a class="nav-element">NAV2</a>
 			<a class="nav-element">NAV3</a>
 			<a class="nav-element">NAV4</a>
 		</div>
 	</div>
 	<div id="content" class="pregled_liste">
-		<input type="text" name="" id="">
+		<input type="text" name="" id="search-articles" onkeyup="search()">
 		<br>
-		<table>
+		<div id="results">
+		</div>
+		<br>
+		<table id="articles">
 			<tr>
 				<td>Br</td>
 				<td>Naziv</td>

@@ -252,11 +252,29 @@ div.pregled_liste *
 	font-size: 3vh;
 }
 
-div.pregled_liste input[type="text"], div.pregled_liste button
+div.pregled_liste button, div.pregled_liste div#results
 {
 	margin-bottom: 10px;
 	width:60vw;
 	margin-left: 10vw;
+}
+
+div.pregled_liste input[type="text"]
+{
+	width:60vw;
+	margin-left: 10vw;
+	font-family:serif;
+}
+
+div.pregled_liste div#results
+{
+	margin-top: 0px;
+	background-color: white;
+}
+
+div.pregled_liste div#results div.result
+{
+	padding: 3px;
 }
 
 div.pregled_liste p
