@@ -10,6 +10,7 @@
 </head>
 <body class="bg-color1">
 	<div id="header">
+            <!---->
 		<img src="<?php echo site_url('img/logo.png');?>" alt="Logo"/>
 		<div id="title">Ценкарош</div>		
 	</div>
