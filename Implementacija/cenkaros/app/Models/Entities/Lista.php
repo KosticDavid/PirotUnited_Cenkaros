@@ -32,25 +32,124 @@ class Lista
      * @var \App\Models\Entities\Korisnik
      *
      * @ORM\ManyToOne(targetEntity="App\Models\Entities\Korisnik")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idKorisnik", referencedColumnName="idKorisnik")
-     * })
+     * @ORM\JoinColumn(name="idKorisnik", referencedColumnName="idKorisnik")
      */
     private $idkorisnik;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="App\Models\Entities\Artikal", mappedBy="idliste")
+     * @ORM\OneToMany(targetEntity="App\Models\Entities\Sadrzi", mappedBy="idListe")
      */
-    private $idartikla;
+    private $idsadrzi;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->idartikla = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idsadrzi = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+    /**
+     * Get idliste.
+     *
+     * @return int
+     */
+    public function getIdliste()
+    {
+        return $this->idliste;
+    }
+
+    /**
+     * Set naziv.
+     *
+     * @param string $naziv
+     *
+     * @return Lista
+     */
+    public function setNaziv($naziv)
+    {
+        $this->naziv = $naziv;
+
+        return $this;
+    }
+
+    /**
+     * Get naziv.
+     *
+     * @return string
+     */
+    public function getNaziv()
+    {
+        return $this->naziv;
+    }
+
+    /**
+     * Set idkorisnik.
+     *
+     * @param \App\Models\Entities\Korisnik|null $idkorisnik
+     *
+     * @return Lista
+     */
+    public function setIdkorisnik(\App\Models\Entities\Korisnik $idkorisnik = null)
+    {
+        $this->idkorisnik = $idkorisnik;
+
+        return $this;
+    }
+
+    /**
+     * Get idkorisnik.
+     *
+     * @return \App\Models\Entities\Korisnik|null
+     */
+    public function getIdkorisnik()
+    {
+        return $this->idkorisnik;
+    }
+
+    /**
+     * Add idsadrzi.
+     *
+     * @param \App\Models\Entities\Sadrzi $idsadrzi
+     *
+     * @return Lista
+     */
+    public function addIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
+    {
+        if(!($this->idsadrzi->contains($idsadrzi)))
+        {
+            $this->idsadrzi[] = $idsadrzi;
+            $idsadrzi->setIdListe($this);
+        }
+        return $this;
+    }
+
+    /**
+     * Remove idsadrzi.
+     *
+     * @param \App\Models\Entities\Sadrzi $idsadrzi
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
+    {
+        if($this->idProdaja->contains($idProdaja))
+        {
+            if($idsadrzi->getIdListe()==$this) $idsadrzi->setIdListe(null);
+            return $this->idsadrzi->removeElement($idsadrzi);
+        }
+    }
+
+    /**
+     * Get idsadrzi.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdsadrzi()
+    {
+        return $this->idsadrzi;
+    }
 }

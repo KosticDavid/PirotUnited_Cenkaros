@@ -16,7 +16,7 @@
 		<div id="nav-container">
 			<a class="nav-element" href="<?php echo site_url("Gost/prijava"); ?>">Prijava</a>
 			<a class="nav-element" href="<?php echo site_url("Gost/registracija"); ?>">Registracija</a>
-			<a class="nav-element" href="#">O nama</a>
-			<a class="nav-element" href="#">Kontakt</a>
+			<a class="nav-element" href="<?php echo site_url("Gost/o_nama"); ?>">O nama</a>
+			<a class="nav-element" href="<?php echo site_url("Gost/kontakt"); ?>">Kontakt</a>
 		</div>
 	</div>

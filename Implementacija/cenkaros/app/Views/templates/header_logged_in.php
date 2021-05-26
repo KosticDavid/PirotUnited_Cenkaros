@@ -16,9 +16,9 @@
 	</div>
 	<div id="nav" class="bg-color2">
 		<div id="nav-container">
-			<a class="nav-element" href="main_admin.html">Pocetna</a>
-			<a class="nav-element" href="#">O nama</a>
-			<a class="nav-element" href="#">Kontakt</a>
+			<a class="nav-element" href="<?php echo site_url($controller); ?>">Pocetna</a>
+			<a class="nav-element" href="<?php echo site_url($controller."/o_nama"); ?>">O nama</a>
+			<a class="nav-element" href="<?php echo site_url($controller."/kontakt"); ?>">Kontakt</a>
 			<a class="nav-element" href="#">Odjavi se</a>
 		</div>
 	</div>

@@ -45,9 +45,207 @@ class Korisnik
     /**
      * @var bool
      *
-     * @ORM\Column(name="tipKorisnika", type="boolean", nullable=false)
+     * @ORM\Column(name="tipKorisnika", type="smallint", nullable=false)
      */
     private $tipkorisnika;
+    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="App\Models\Entities\Lista", mappedBy="idListe")
+     * 
+     */
+    private $idlista;
+    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToOne(targetEntity="App\Models\Entities\Radnja", inversedBy="idRadnje")
+     * 
+     */
+    private $idradnje;
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idlista = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idradnje = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
+
+    /**
+     * Get idkorisnik.
+     *
+     * @return int
+     */
+    public function getIdkorisnik()
+    {
+        return $this->idkorisnik;
+    }
+
+    /**
+     * Set kime.
+     *
+     * @param string $kime
+     *
+     * @return Korisnik
+     */
+    public function setKime($kime)
+    {
+        $this->kime = $kime;
+
+        return $this;
+    }
+
+    /**
+     * Get kime.
+     *
+     * @return string
+     */
+    public function getKime()
+    {
+        return $this->kime;
+    }
+
+    /**
+     * Set sifra.
+     *
+     * @param string $sifra
+     *
+     * @return Korisnik
+     */
+    public function setSifra($sifra)
+    {
+        $this->sifra = $sifra;
+
+        return $this;
+    }
+
+    /**
+     * Get sifra.
+     *
+     * @return string
+     */
+    public function getSifra()
+    {
+        return $this->sifra;
+    }
+
+    /**
+     * Set email.
+     *
+     * @param string $email
+     *
+     * @return Korisnik
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email.
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set tipkorisnika.
+     *
+     * @param int $tipkorisnika
+     *
+     * @return Korisnik
+     */
+    public function setTipkorisnika($tipkorisnika)
+    {
+        $this->tipkorisnika = $tipkorisnika;
+
+        return $this;
+    }
+
+    /**
+     * Get tipkorisnika.
+     *
+     * @return int
+     */
+    public function getTipkorisnika()
+    {
+        return $this->tipkorisnika;
+    }
+
+    /**
+     * Add idlistum.
+     *
+     * @param \App\Models\Entities\Lista $idlistum
+     *
+     * @return Korisnik
+     */
+    public function addIdlistum(\App\Models\Entities\Lista $idlistum)
+    {
+        if(!($this->idlista->contains($idlistum)))
+        {
+            $this->idlista[] = $idlistum;
+            $idlistum->setIdkorisnik($this);
+        }
+        return $this;
+    }
+
+    /**
+     * Remove idlistum.
+     *
+     * @param \App\Models\Entities\Lista $idlistum
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeIdlistum(\App\Models\Entities\Lista $idlistum)
+    {
+        if($this->idlista->contains($idlistum))
+        {
+            if($idlistum->getIdkorisnik()==$this) $idlistum->setIdkorisnik (null);
+            return $this->idlista->removeElement($idlistum);
+        }
+    }
+
+    /**
+     * Get idlista.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdlista()
+    {
+        return $this->idlista;
+    }
+
+    /**
+     * Set idradnje.
+     *
+     * @param \App\Models\Entities\Radnja|null $idradnje
+     *
+     * @return Korisnik
+     */
+    public function setIdradnje(\App\Models\Entities\Radnja $idradnje = null)
+    {
+        $this->idradnje = $idradnje;
+
+        return $this;
+    }
+
+    /**
+     * Get idradnje.
+     *
+     * @return \App\Models\Entities\Radnja|null
+     */
+    public function getIdradnje()
+    {
+        return $this->idradnje;
+    }
 }

@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Models\Entities;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Artikal
+ *
+ * @ORM\Table(name="artikal")
+ * @ORM\Entity
+ */
+class Artikal
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idArtikla", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idartikla;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="naziv", type="string", length=50, nullable=false)
+     */
+    private $naziv;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="jedinicaMere", type="string", length=5, nullable=false)
+     */
+    private $jedinicamere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tags", type="string", length=400, nullable=false)
+     */
+    private $tags;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="App\Models\Entities\Prodaje", mappedBy="idartikla")
+     */
+    private $idprodaje;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="App\Models\Entities\Sadrzi", mappedBy="idartikla")
+     */
+    private $idsadrzi;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idprodaje = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idsadrzi = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

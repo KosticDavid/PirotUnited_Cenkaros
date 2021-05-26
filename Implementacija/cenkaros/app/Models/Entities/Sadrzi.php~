@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Models\Entities;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Sadrzi
+ *
+ * @ORM\Table(name="sadrzi")
+ * @ORM\Entity
+ */
+class Sadrzi
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idArtikla", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Artikal")
+     * @ORM\JoinColumn(name="idArtikla", referencedColumnName="idArtikla")
+     * @ORM\Id
+     */
+    private $idartikla;
+    
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idListe", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Lista")
+     * @ORM\JoinColumn(name="idListe", referencedColumnName="idListe")
+     * @ORM\Id
+     */
+    private $idliste;
+
+    /**
+     * @var decimal
+     *
+     * @ORM\Column(name="kolicina", type="decimal", precision=10, scale=2, nullable=false)
+     */
+    private $kolicina;
+
+}
