@@ -68,4 +68,10 @@ class Gost extends BazniKontroler
     {
         $this->show('kontakt',[]);
     }
+    
+    public function david()
+    {
+        echo "<p>David</p>";
+    }
+    
 }

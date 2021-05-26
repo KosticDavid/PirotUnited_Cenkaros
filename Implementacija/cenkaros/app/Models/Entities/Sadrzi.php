@@ -15,7 +15,7 @@ class Sadrzi
     /**
      * @var \App\Models\Entities\Artikal
      *
-     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Artikal")
+     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Artikal",inversedBy="idartikla")
      * @ORM\JoinColumn(name="idArtikla", referencedColumnName="idArtikla")
      * @ORM\Id
      */
@@ -24,7 +24,7 @@ class Sadrzi
     /**
      * @var App\Models\Entities\Lista
      *
-     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Lista")
+     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Lista",inversedBy="idsadrzi")
      * @ORM\JoinColumn(name="idListe", referencedColumnName="idListe")
      * @ORM\Id
      */
@@ -39,57 +39,9 @@ class Sadrzi
 
 
     /**
-     * Set idartikla.
-     *
-     * @param \App\Models\Entities\Artikal $idartikla
-     *
-     * @return Sadrzi
-     */
-    public function setIdArtikla($idartikla)
-    {
-        $this->idartikla = $idartikla;
-
-        return $this;
-    }
-
-    /**
-     * Get idartikla.
-     *
-     * @return \App\Models\Entities\Artikal
-     */
-    public function getIdArtikla()
-    {
-        return $this->idartikla;
-    }
-
-    /**
-     * Set idliste.
-     *
-     * @param App\Models\Entities\Lista $idliste
-     *
-     * @return Sadrzi
-     */
-    public function setIdListe($idliste)
-    {
-        $this->idliste = $idliste;
-
-        return $this;
-    }
-
-    /**
-     * Get idliste.
-     *
-     * @return App\Models\Entities\Lista
-     */
-    public function getIdListe()
-    {
-        return $this->idliste;
-    }
-
-    /**
      * Set kolicina.
      *
-     * @param decimal $kolicina
+     * @param string $kolicina
      *
      * @return Sadrzi
      */
@@ -103,10 +55,58 @@ class Sadrzi
     /**
      * Get kolicina.
      *
-     * @return decimal
+     * @return string
      */
     public function getKolicina()
     {
         return $this->kolicina;
+    }
+
+    /**
+     * Set idartikla.
+     *
+     * @param \App\Models\Entities\Artikal $idartikla
+     *
+     * @return Sadrzi
+     */
+    public function setIdartikla(\App\Models\Entities\Artikal $idartikla)
+    {
+        $this->idartikla = $idartikla;
+
+        return $this;
+    }
+
+    /**
+     * Get idartikla.
+     *
+     * @return \App\Models\Entities\Artikal
+     */
+    public function getIdartikla()
+    {
+        return $this->idartikla;
+    }
+
+    /**
+     * Set idliste.
+     *
+     * @param \App\Models\Entities\Lista $idliste
+     *
+     * @return Sadrzi
+     */
+    public function setIdliste(\App\Models\Entities\Lista $idliste)
+    {
+        $this->idliste = $idliste;
+
+        return $this;
+    }
+
+    /**
+     * Get idliste.
+     *
+     * @return \App\Models\Entities\Lista
+     */
+    public function getIdliste()
+    {
+        return $this->idliste;
     }
 }

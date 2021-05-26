@@ -15,7 +15,7 @@ class Prodaje
     /**
      * @var App\Models\Entities\Artikal
      *
-     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Artikal")
+     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Artikal",inversedBy="idprodaje")
      * @ORM\JoinColumn(name="idArtikla", referencedColumnName="idArtikla")
      * @ORM\Id
      */
@@ -24,7 +24,7 @@ class Prodaje
     /**
      * @var App\Models\Entities\Radnja
      *
-     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Radnja")
+     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Radnja",inversedBy="idprodaje")
      * @ORM\JoinColumn(name="idRadnje", referencedColumnName="idRadnje")
      * @ORM\Id
      */
@@ -39,57 +39,9 @@ class Prodaje
 
 
     /**
-     * Set idartikla.
-     *
-     * @param \App\Models\Entities\Artikal $idartikla
-     *
-     * @return Prodaje
-     */
-    public function setIdArtikla($idartikla)
-    {
-        $this->idartikla = $idartikla;
-
-        return $this;
-    }
-
-    /**
-     * Get idartikla.
-     *
-     * @return \App\Models\Entities\Artikal
-     */
-    public function getIdArtikla()
-    {
-        return $this->idartikla;
-    }
-
-    /**
-     * Set idradnje.
-     *
-     * @param \App\Models\Entities\Radnja $idradnje
-     *
-     * @return Prodaje
-     */
-    public function setIdRadnje($idradnje)
-    {
-        $this->idradnje = $idradnje;
-
-        return $this;
-    }
-
-    /**
-     * Get idradnje.
-     *
-     * @return \App\Models\Entities\Radnja
-     */
-    public function getIdRadnje()
-    {
-        return $this->idradnje;
-    }
-
-    /**
      * Set cena.
      *
-     * @param decimal $cena
+     * @param string $cena
      *
      * @return Prodaje
      */
@@ -103,10 +55,58 @@ class Prodaje
     /**
      * Get cena.
      *
-     * @return decimal
+     * @return string
      */
     public function getCena()
     {
         return $this->cena;
+    }
+
+    /**
+     * Set idartikla.
+     *
+     * @param \App\Models\Entities\Artikal $idartikla
+     *
+     * @return Prodaje
+     */
+    public function setIdartikla(\App\Models\Entities\Artikal $idartikla)
+    {
+        $this->idartikla = $idartikla;
+
+        return $this;
+    }
+
+    /**
+     * Get idartikla.
+     *
+     * @return \App\Models\Entities\Artikal
+     */
+    public function getIdartikla()
+    {
+        return $this->idartikla;
+    }
+
+    /**
+     * Set idradnje.
+     *
+     * @param \App\Models\Entities\Radnja $idradnje
+     *
+     * @return Prodaje
+     */
+    public function setIdradnje(\App\Models\Entities\Radnja $idradnje)
+    {
+        $this->idradnje = $idradnje;
+
+        return $this;
+    }
+
+    /**
+     * Get idradnje.
+     *
+     * @return \App\Models\Entities\Radnja
+     */
+    public function getIdradnje()
+    {
+        return $this->idradnje;
     }
 }

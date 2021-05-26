@@ -179,50 +179,6 @@ class Sadrzi extends \App\Models\Entities\Sadrzi implements \Doctrine\ORM\Proxy\
     /**
      * {@inheritDoc}
      */
-    public function setIdArtikla($idartikla)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdArtikla', [$idartikla]);
-
-        return parent::setIdArtikla($idartikla);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdArtikla()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdArtikla', []);
-
-        return parent::getIdArtikla();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setIdListe($idliste)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdListe', [$idliste]);
-
-        return parent::setIdListe($idliste);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdListe()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdListe', []);
-
-        return parent::getIdListe();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setKolicina($kolicina)
     {
 
@@ -240,6 +196,50 @@ class Sadrzi extends \App\Models\Entities\Sadrzi implements \Doctrine\ORM\Proxy\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getKolicina', []);
 
         return parent::getKolicina();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIdartikla(\App\Models\Entities\Artikal $idartikla)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdartikla', [$idartikla]);
+
+        return parent::setIdartikla($idartikla);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIdartikla()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdartikla', []);
+
+        return parent::getIdartikla();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIdliste(\App\Models\Entities\Lista $idliste)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdliste', [$idliste]);
+
+        return parent::setIdliste($idliste);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIdliste()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdliste', []);
+
+        return parent::getIdliste();
     }
 
 }

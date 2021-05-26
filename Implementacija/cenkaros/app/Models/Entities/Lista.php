@@ -31,15 +31,17 @@ class Lista
     /**
      * @var \App\Models\Entities\Korisnik
      *
-     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Korisnik")
-     * @ORM\JoinColumn(name="idKorisnik", referencedColumnName="idKorisnik")
+     * @ORM\ManyToOne(targetEntity="App\Models\Entities\Korisnik",inversedBy="idlista")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idKorisnik", referencedColumnName="idKorisnik")
+     * })
      */
     private $idkorisnik;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\OneToMany(targetEntity="App\Models\Entities\Sadrzi", mappedBy="idListe")
+     * @ORM\OneToMany(targetEntity="App\Models\Entities\Sadrzi", mappedBy="idartikla")
      */
     private $idsadrzi;
 
@@ -119,11 +121,8 @@ class Lista
      */
     public function addIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
     {
-        if(!($this->idsadrzi->contains($idsadrzi)))
-        {
-            $this->idsadrzi[] = $idsadrzi;
-            $idsadrzi->setIdListe($this);
-        }
+        $this->idsadrzi[] = $idsadrzi;
+
         return $this;
     }
 
@@ -136,11 +135,7 @@ class Lista
      */
     public function removeIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
     {
-        if($this->idProdaja->contains($idProdaja))
-        {
-            if($idsadrzi->getIdListe()==$this) $idsadrzi->setIdListe(null);
-            return $this->idsadrzi->removeElement($idsadrzi);
-        }
+        return $this->idsadrzi->removeElement($idsadrzi);
     }
 
     /**

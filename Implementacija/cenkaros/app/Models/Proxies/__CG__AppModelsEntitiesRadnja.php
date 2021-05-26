@@ -66,10 +66,10 @@ class Radnja extends \App\Models\Entities\Radnja implements \Doctrine\ORM\Proxy\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idradnje', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'naziv', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'sirina', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'duzina', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'pib', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'radnidani', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'radnovreme', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idpredstavnika', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idProdaja'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idradnje', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'naziv', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'sirina', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'duzina', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'pib', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'radnidani', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'radnovreme', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idpredstavnika', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idprodaje'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idradnje', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'naziv', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'sirina', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'duzina', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'pib', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'radnidani', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'radnovreme', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idpredstavnika', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idProdaja'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idradnje', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'naziv', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'sirina', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'duzina', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'pib', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'radnidani', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'radnovreme', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idpredstavnika', '' . "\0" . 'App\\Models\\Entities\\Radnja' . "\0" . 'idprodaje'];
     }
 
     /**
@@ -348,34 +348,34 @@ class Radnja extends \App\Models\Entities\Radnja implements \Doctrine\ORM\Proxy\
     /**
      * {@inheritDoc}
      */
-    public function addIdProdaja(\App\Models\Entities\Prodaje $idProdaje)
+    public function addIdprodaje(\App\Models\Entities\Artikal $idprodaje)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addIdProdaja', [$idProdaje]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addIdprodaje', [$idprodaje]);
 
-        return parent::addIdProdaja($idProdaje);
+        return parent::addIdprodaje($idprodaje);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function removeIdProdaja(\App\Models\Entities\Prodaje $idProdaja)
+    public function removeIdprodaje(\App\Models\Entities\Artikal $idprodaje)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeIdProdaja', [$idProdaja]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeIdprodaje', [$idprodaje]);
 
-        return parent::removeIdProdaja($idProdaja);
+        return parent::removeIdprodaje($idprodaje);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getIdProdaja()
+    public function getIdprodaje()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdProdaja', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdprodaje', []);
 
-        return parent::getIdProdaja();
+        return parent::getIdprodaje();
     }
 
 }

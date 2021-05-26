@@ -66,10 +66,10 @@ class Korisnik extends \App\Models\Entities\Korisnik implements \Doctrine\ORM\Pr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idkorisnik', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'kime', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'sifra', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'email', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'tipkorisnika', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idlista', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idradnje'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idkorisnik', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'kime', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'sifra', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'email', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'tipkorisnika', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idpredstavnika', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idlista'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idkorisnik', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'kime', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'sifra', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'email', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'tipkorisnika', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idlista', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idradnje'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idkorisnik', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'kime', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'sifra', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'email', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'tipkorisnika', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idpredstavnika', '' . "\0" . 'App\\Models\\Entities\\Korisnik' . "\0" . 'idlista'];
     }
 
     /**
@@ -282,6 +282,28 @@ class Korisnik extends \App\Models\Entities\Korisnik implements \Doctrine\ORM\Pr
     /**
      * {@inheritDoc}
      */
+    public function setIdpredstavnika(\App\Models\Entities\Radnja $idpredstavnika = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdpredstavnika', [$idpredstavnika]);
+
+        return parent::setIdpredstavnika($idpredstavnika);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIdpredstavnika()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdpredstavnika', []);
+
+        return parent::getIdpredstavnika();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function addIdlistum(\App\Models\Entities\Lista $idlistum)
     {
 
@@ -310,28 +332,6 @@ class Korisnik extends \App\Models\Entities\Korisnik implements \Doctrine\ORM\Pr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdlista', []);
 
         return parent::getIdlista();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setIdradnje(\App\Models\Entities\Radnja $idradnje = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdradnje', [$idradnje]);
-
-        return parent::setIdradnje($idradnje);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdradnje()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdradnje', []);
-
-        return parent::getIdradnje();
     }
 
 }

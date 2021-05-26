@@ -179,50 +179,6 @@ class Prodaje extends \App\Models\Entities\Prodaje implements \Doctrine\ORM\Prox
     /**
      * {@inheritDoc}
      */
-    public function setIdArtikla($idartikla)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdArtikla', [$idartikla]);
-
-        return parent::setIdArtikla($idartikla);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdArtikla()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdArtikla', []);
-
-        return parent::getIdArtikla();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setIdRadnje($idradnje)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdRadnje', [$idradnje]);
-
-        return parent::setIdRadnje($idradnje);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdRadnje()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdRadnje', []);
-
-        return parent::getIdRadnje();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setCena($cena)
     {
 
@@ -240,6 +196,50 @@ class Prodaje extends \App\Models\Entities\Prodaje implements \Doctrine\ORM\Prox
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCena', []);
 
         return parent::getCena();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIdartikla(\App\Models\Entities\Artikal $idartikla)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdartikla', [$idartikla]);
+
+        return parent::setIdartikla($idartikla);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIdartikla()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdartikla', []);
+
+        return parent::getIdartikla();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIdradnje(\App\Models\Entities\Radnja $idradnje)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdradnje', [$idradnje]);
+
+        return parent::setIdradnje($idradnje);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIdradnje()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdradnje', []);
+
+        return parent::getIdradnje();
     }
 
 }

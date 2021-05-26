@@ -3,6 +3,7 @@
 namespace App\Models\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Radnja
  *
@@ -28,14 +29,14 @@ class Radnja
     private $naziv;
 
     /**
-     * @var string
+     * @var decimal
      *
      * @ORM\Column(name="sirina", type="decimal", precision=18, scale=15, nullable=false)
      */
     private $sirina;
 
     /**
-     * @var string
+     * @var decimal
      *
      * @ORM\Column(name="duzina", type="decimal", precision=18, scale=15, nullable=false)
      */
@@ -49,7 +50,7 @@ class Radnja
     private $pib;
 
     /**
-     * @var bool
+     * @var smallint
      *
      * @ORM\Column(name="radniDani", type="smallint", nullable=false)
      */
@@ -65,24 +66,26 @@ class Radnja
     /**
      * @var \App\Models\Entities\Korisnik
      *
-     * @ORM\OneToOne(targetEntity="App\Models\Entities\Korisnik")
-     * @ORM\JoinColumn(name="idPredstavnika", referencedColumnName="idKorisnik")
+     * @ORM\OneToOne(targetEntity="App\Models\Entities\Korisnik",inversedBy="idpredstavnika")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idPredstavnika", referencedColumnName="idKorisnik")
+     * })
      */
     private $idpredstavnika;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\OneToMany(targetEntity="App\Models\Entities\Prodaje", mappedBy="idRadnje")
+     * @ORM\OneToMany(targetEntity="App\Models\Entities\Artikal", mappedBy="idradnje")
      */
-    private $idProdaja;
+    private $idprodaje;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->idProdaja = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idprodaje = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
@@ -265,45 +268,38 @@ class Radnja
     }
 
     /**
-     * Add idProdaja.
+     * Add idprodaje.
      *
-     * @param \App\Models\Entities\Prodaja $idProdaja
+     * @param \App\Models\Entities\Artikal $idprodaje
      *
      * @return Radnja
      */
-    public function addIdProdaja(\App\Models\Entities\Prodaje $idProdaje)
+    public function addIdprodaje(\App\Models\Entities\Artikal $idprodaje)
     {
-        if(!($this->idProdaja->contains($idProdaja)))
-        {
-            $this->idProdaja[] = $idProdaja;
-            $idProdaja->setIdRadnje($this);
-        }
+        $this->idprodaje[] = $idprodaje;
+
         return $this;
     }
 
     /**
-     * Remove idProdaja.
+     * Remove idprodaje.
      *
-     * @param \App\Models\Entities\Prodaja $idProdaja
+     * @param \App\Models\Entities\Artikal $idprodaje
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeIdProdaja(\App\Models\Entities\Prodaje $idProdaja)
+    public function removeIdprodaje(\App\Models\Entities\Artikal $idprodaje)
     {
-        if($this->idProdaja->contains($idProdaja))
-        {
-            if($idProdaja->getIdRadnje()==$this) $idProdaja->setIdRadnje(null);
-            return $this->idProdaja->removeElement($idProdaja);
-        }
+        return $this->idprodaje->removeElement($idprodaje);
     }
 
     /**
-     * Get idProdaja.
+     * Get idprodaje.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getIdProdaja()
+    public function getIdprodaje()
     {
-        return $this->idProdaja;
+        return $this->idprodaje;
     }
 }

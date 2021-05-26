@@ -157,12 +157,7 @@ class Artikal
      */
     public function addIdprodaje(\App\Models\Entities\Prodaje $idprodaje)
     {
-        
-        if(!($this->idProdaja->contains($idProdaja)))
-        {
-            $this->idProdaja[] = $idProdaja;
-            $idProdaja->setIdArtikla($this);
-        }
+        $this->idprodaje[] = $idprodaje;
 
         return $this;
     }
@@ -176,11 +171,7 @@ class Artikal
      */
     public function removeIdprodaje(\App\Models\Entities\Prodaje $idprodaje)
     {
-        if($this->idProdaja->contains($idProdaja))
-        {
-            if($idProdaja->getIdArtikla()==$this) $idProdaja->setIdArtikla(null);
-            return $this->idprodaje->removeElement($idprodaje);
-        }
+        return $this->idprodaje->removeElement($idprodaje);
     }
 
     /**
@@ -202,12 +193,7 @@ class Artikal
      */
     public function addIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
     {
-        
-        if(!($this->idsadrzi->contains($idsadrzi)))
-        {
-            $this->idsadrzi[] = $idsadrzi;
-            $idsadrzi->setIdArtikla($this);
-        }
+        $this->idsadrzi[] = $idsadrzi;
 
         return $this;
     }
@@ -221,11 +207,7 @@ class Artikal
      */
     public function removeIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
     {
-        if($this->idProdaja->contains($idProdaja))
-        {
-            if($idsadrzi->getIdArtikla()==$this) $idsadrzi->setIdArtikla(null);
-            return $this->idsadrzi->removeElement($idsadrzi);
-        }
+        return $this->idsadrzi->removeElement($idsadrzi);
     }
 
     /**

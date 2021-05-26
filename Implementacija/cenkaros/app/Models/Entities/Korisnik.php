@@ -43,37 +43,36 @@ class Korisnik
     private $email;
 
     /**
-     * @var bool
+     * @var smallint
      *
      * @ORM\Column(name="tipKorisnika", type="smallint", nullable=false)
      */
     private $tipkorisnika;
+
+    /**
+     * @var \App\Models\Entities\Radnja
+     *
+     * @ORM\OneToOne(targetEntity="App\Models\Entities\Radnja",mappedBy="idpredstavnika")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idKorisnik", referencedColumnName="idPredstavnika")
+     * })
+     */
+    private $idpredstavnika;
     
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\OneToMany(targetEntity="App\Models\Entities\Lista", mappedBy="idListe")
-     * 
+     * @ORM\OneToMany(targetEntity="App\Models\Entities\Lista",mappedBy="idkorisnik")
      */
     private $idlista;
-    
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\OneToOne(targetEntity="App\Models\Entities\Radnja", inversedBy="idRadnje")
-     * 
-     */
-    private $idradnje;
-    
+
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->idlista = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->idradnje = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
 
 
     /**
@@ -183,6 +182,30 @@ class Korisnik
     }
 
     /**
+     * Set idpredstavnika.
+     *
+     * @param \App\Models\Entities\Radnja|null $idpredstavnika
+     *
+     * @return Korisnik
+     */
+    public function setIdpredstavnika(\App\Models\Entities\Radnja $idpredstavnika = null)
+    {
+        $this->idpredstavnika = $idpredstavnika;
+
+        return $this;
+    }
+
+    /**
+     * Get idpredstavnika.
+     *
+     * @return \App\Models\Entities\Radnja|null
+     */
+    public function getIdpredstavnika()
+    {
+        return $this->idpredstavnika;
+    }
+
+    /**
      * Add idlistum.
      *
      * @param \App\Models\Entities\Lista $idlistum
@@ -191,11 +214,8 @@ class Korisnik
      */
     public function addIdlistum(\App\Models\Entities\Lista $idlistum)
     {
-        if(!($this->idlista->contains($idlistum)))
-        {
-            $this->idlista[] = $idlistum;
-            $idlistum->setIdkorisnik($this);
-        }
+        $this->idlista[] = $idlistum;
+
         return $this;
     }
 
@@ -208,11 +228,7 @@ class Korisnik
      */
     public function removeIdlistum(\App\Models\Entities\Lista $idlistum)
     {
-        if($this->idlista->contains($idlistum))
-        {
-            if($idlistum->getIdkorisnik()==$this) $idlistum->setIdkorisnik (null);
-            return $this->idlista->removeElement($idlistum);
-        }
+        return $this->idlista->removeElement($idlistum);
     }
 
     /**
@@ -223,29 +239,5 @@ class Korisnik
     public function getIdlista()
     {
         return $this->idlista;
-    }
-
-    /**
-     * Set idradnje.
-     *
-     * @param \App\Models\Entities\Radnja|null $idradnje
-     *
-     * @return Korisnik
-     */
-    public function setIdradnje(\App\Models\Entities\Radnja $idradnje = null)
-    {
-        $this->idradnje = $idradnje;
-
-        return $this;
-    }
-
-    /**
-     * Get idradnje.
-     *
-     * @return \App\Models\Entities\Radnja|null
-     */
-    public function getIdradnje()
-    {
-        return $this->idradnje;
     }
 }
