@@ -276,8 +276,11 @@ class Radnja
      */
     public function addIdprodaje(\App\Models\Entities\Artikal $idprodaje)
     {
-        $this->idprodaje[] = $idprodaje;
-
+        if(!$this->idprodaje->contains($idprodaje))
+        {
+            $this->idprodaje[] = $idprodaje;
+            $idprodaje->setIdradnje($this);
+        }
         return $this;
     }
 
@@ -290,7 +293,13 @@ class Radnja
      */
     public function removeIdprodaje(\App\Models\Entities\Artikal $idprodaje)
     {
-        return $this->idprodaje->removeElement($idprodaje);
+        if($this->idprodaje->contains($idprodaje))
+        {
+            if($idprodaje->getIdradnje() == $this)
+                $idprodaje->setIdradnje(null);
+            return $this->idprodaje->removeElement($idprodaje);
+        }
+        return false;
     }
 
     /**

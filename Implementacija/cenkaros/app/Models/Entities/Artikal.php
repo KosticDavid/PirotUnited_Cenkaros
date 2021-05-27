@@ -157,9 +157,12 @@ class Artikal
      */
     public function addIdprodaje(\App\Models\Entities\Prodaje $idprodaje)
     {
-        $this->idprodaje[] = $idprodaje;
-
-        return $this;
+      if(!$this->idprodaje->contains($idprodaje))
+      {
+          $this->idprodaje[] = $idprodaje;
+          $idprodaje->setIdartikla($this);
+      }
+      return $this;
     }
 
     /**
@@ -171,7 +174,12 @@ class Artikal
      */
     public function removeIdprodaje(\App\Models\Entities\Prodaje $idprodaje)
     {
-        return $this->idprodaje->removeElement($idprodaje);
+       if($this->idprodaje->contains($idprodaje)){
+           if($idprodaje->getIdartikla() == $this)
+               $idprodaje->setIdartikla(null);
+            return $this->idprodaje->removeElement($idprodaje);
+       }
+       return false;
     }
 
     /**
@@ -193,8 +201,11 @@ class Artikal
      */
     public function addIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
     {
-        $this->idsadrzi[] = $idsadrzi;
-
+        if(!$this->idsadrzi->contains($idsadrzi))
+        {
+            $this->idsadrzi[] = $idsadrzi;
+            $idsadrzi->setIdartikla($this);
+        }
         return $this;
     }
 
@@ -207,7 +218,12 @@ class Artikal
      */
     public function removeIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
     {
-        return $this->idsadrzi->removeElement($idsadrzi);
+        if($this->idsadrzi->contains($idsadrzi)){
+            if($idsadrzi->getIdartikla() == $this)
+                $idsadrzi->setIdartikla(null);
+            return $this->idsadrzi->removeElement($idsadrzi);
+        }
+        return false;
     }
 
     /**

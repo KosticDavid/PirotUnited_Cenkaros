@@ -214,9 +214,11 @@ class Korisnik
      */
     public function addIdlistum(\App\Models\Entities\Lista $idlistum)
     {
-        $this->idlista[] = $idlistum;
-
-        return $this;
+       if(!$this->idlista->contains($idlistum)){
+           $this->idlista[] = $idlistum;
+           $idlistum->setIdkorisnik($this);
+       }
+       return $this;
     }
 
     /**
@@ -228,7 +230,13 @@ class Korisnik
      */
     public function removeIdlistum(\App\Models\Entities\Lista $idlistum)
     {
-        return $this->idlista->removeElement($idlistum);
+        if($this->idlista->contains($idlistum))
+        {
+            if($idlistum->getIdkorisnik() == $this)
+                $idlistum->setIdkorisnik(null);
+            return $this->idlista->removeElement($idlistum);
+        }
+        return false;
     }
 
     /**

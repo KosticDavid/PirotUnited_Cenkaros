@@ -121,8 +121,11 @@ class Lista
      */
     public function addIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
     {
-        $this->idsadrzi[] = $idsadrzi;
-
+        if(!$this->idsadrzi->contains($idsadrzi))
+        {
+            $this->idsadrzi[] = $idsadrzi;
+            $idsadrzi->setIdliste($this);
+        }
         return $this;
     }
 
@@ -135,7 +138,13 @@ class Lista
      */
     public function removeIdsadrzi(\App\Models\Entities\Sadrzi $idsadrzi)
     {
-        return $this->idsadrzi->removeElement($idsadrzi);
+        if($this->idsadrzi->conatains($idsadrzi))
+        {
+            if($idsadrzi->getIdliste() == $this)
+                $idsadrzi->setIdliste(null);
+            return $this->idsadrzi->removeElement($idsadrzi);
+        }
+        return false;
     }
 
     /**
