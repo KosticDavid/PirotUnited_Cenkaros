@@ -336,18 +336,22 @@ div.zahtevi table, div.zahtevi td, div.zahtevi tr
 
 div.zahtevi table
 {
-	width:90vw;
+
+    padding: 5vw;
+    min-width: 100vw;
+        
 }
 
 div.zahtevi
 {
-	padding-left: 5vw;
-	padding-top: 5vh;
+    padding-top: 3vh;
+    overflow-x: scroll;
 }
 
 div.zahtevi td
 {
 	padding:5px;
+        /*min-width: 15vw;*/
 }
 
 div.zahtevi *
@@ -357,5 +361,10 @@ div.zahtevi *
 
 div.zahtevi table tr td:nth-child(1)
 {
-	width:3vw;
+	max-width:3vw;
+}
+
+div.zahtevi table tr td:nth-child(6)
+{
+	/*width:12vw;*/
 }

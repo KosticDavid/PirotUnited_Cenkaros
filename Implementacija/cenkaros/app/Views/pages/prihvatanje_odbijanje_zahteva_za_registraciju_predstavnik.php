@@ -1,48 +1,39 @@
 	<div id="content" class="zahtevi">
 		<table>
-			<tr>
-				<td></td>
-				<td>Korisnicko ime</td>
-				<td>Email</td>
-				<td>Naziv radnje</td>
-				<td>Lokacija</td>
-				<td>Radno vreme</td>
-				<td>PIB</td>
-				<td>Prihvati</td>
-				<td>Odbij</td>
-			</tr>
-			<tr>
-				<td>1.</td>
-				<td>david1</td>
-				<td>david@gmail.com</td>
-				<td>Maxi Terazije</td>
-				<td>40, 20</td>
-				<td>08-22</td>
-				<td>9999955555</td>
-				<td><button>Prihvati</button></td>
-				<td><button>Odbij</button></td>
-			</tr>
-			<tr>
-				<td>2.</td>
-				<td>milena1</td>
-				<td>milena@gmail.com</td>
-				<td>Idea Beogradjanka</td>
-				<td>40, 20</td>
-				<td>06-22</td>
-				<td>9996666555</td>
-				<td><button>Prihvati</button></td>
-				<td><button>Odbij</button></td>
-			</tr>
-			<tr>
-				<td>3.</td>
-				<td>milan1</td>
-				<td>milan@gmail.com</td>
-				<td>Roda</td>
-				<td>40, 20</td>
-				<td>08-21</td>
-				<td>9994455555</td>
-				<td><button>Prihvati</button></td>
-				<td><button>Odbij</button></td>
-			</tr>
+                    <tr>
+                        <td></td>
+                        <td>Korisnicko ime</td>
+                        <td>Email</td>
+                        <td>Naziv radnje</td>
+                        <td>Lokacija</td>
+                        <!--<td>Radno vreme</td>-->
+                        <td>PIB</td>
+                        <td></td>
+                    </tr>
+                    <?php
+                    for($i=0;$i<count($radnje); $i++)
+                    {
+//                        $rv = explode(";",$radnje[$i]->radnoVreme);
+                        echo "<tr>";
+			echo "<td>".($i+1)."</td>";
+			echo "<td>{$predstavnici[$i]->kIme}</td>";
+			echo "<td>{$predstavnici[$i]->email}</td>";
+                        echo "<td>{$radnje[$i]->naziv}</td>";
+			echo "<td>{$radnje[$i]->sirina}</br>{$radnje[$i]->duzina}</td>";
+//			echo "<td>";
+//                        for($j=0; $j<7; $j++)
+//                        {
+//                            echo $rv[$j];
+//                            echo "</br>";
+//                        }
+//                        echo "</td>";
+			echo "<td>{$radnje[$i]->pib}</td>";
+			echo "<td><form action='";
+                        echo site_url("Administrator/prihvatiodbij/{$predstavnici[$i]->idKorisnik}");
+                        echo "' method='POST'><input type='submit' name='prihvati' value='Prihvati'></br>";
+                        echo "</br><input type='submit' value='Odbij'></form></td>";
+			echo "</tr>";
+                    }
+                    ?>
 		</table>
 	</div>

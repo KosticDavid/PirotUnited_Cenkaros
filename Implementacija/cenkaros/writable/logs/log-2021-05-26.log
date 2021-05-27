@@ -1307,3 +1307,98 @@ CRITICAL - 2021-05-26 13:25:42 --> Undefined index: idPredstavnika
 #12 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
 #13 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #14 {main}
+CRITICAL - 2021-05-26 15:18:08 --> Undefined variable: data
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(63): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->sacuvane_liste()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-26 15:34:10 --> Class 'App\Controllers\ListaModel' not found
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->sacuvane_liste()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-26 15:34:13 --> Class 'App\Controllers\ListaModel' not found
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->sacuvane_liste()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-26 15:34:56 --> Cannot declare class App\Models\KorisnikModel, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-05-26 15:35:48 --> syntax error, unexpected end of file
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('pages\\pregledaj...', Array, true)
+#2 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(14): view('pages\\pregledaj...', Array)
+#3 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(63): App\Controllers\Kupac->show('pregledaj_sacuv...', Array)
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->sacuvane_liste()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#6 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-05-26 15:38:51 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('pages\\pregledaj...', Array, true)
+#2 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(14): view('pages\\pregledaj...', Array)
+#3 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(63): App\Controllers\Kupac->show('pregledaj_sacuv...', Array)
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->sacuvane_liste()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#6 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-05-26 16:43:52 --> Invalid file: pages\login.php
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages\\login.php')
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('pages\\login', Array, true)
+#2 C:\xampp\htdocs\cenkaros\app\Controllers\Gost.php(15): view('pages\\login', Array)
+#3 C:\xampp\htdocs\cenkaros\app\Controllers\Gost.php(43): App\Controllers\Gost->show('login', Array)
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Gost->zahtev_za_registraciju()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gost))
+#6 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2021-05-26 16:45:04 --> Class 'App\Controllers\korisnikModel' not found
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Gost->zahtev_za_registraciju()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gost))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-26 16:53:29 --> Array to string conversion
+#0 C:\xampp\htdocs\cenkaros\app\Views\pages\slanje_zahteva_za_registraciju.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 19, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('pages\\slanje_za...', Array, true)
+#4 C:\xampp\htdocs\cenkaros\app\Controllers\Gost.php(15): view('pages\\slanje_za...', Array)
+#5 C:\xampp\htdocs\cenkaros\app\Controllers\Gost.php(31): App\Controllers\Gost->show('slanje_zahteva_...', Array)
+#6 C:\xampp\htdocs\cenkaros\app\Controllers\Gost.php(43): App\Controllers\Gost->registracija(Array)
+#7 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Gost->zahtev_za_registraciju()
+#8 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gost))
+#9 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2021-05-26 16:57:02 --> Column 'sifra' cannot be null
+CRITICAL - 2021-05-26 16:57:02 --> Column 'sifra' cannot be null
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('INSERT INTO `ko...')
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ko...')
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ko...')
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ko...', Array, false)
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Model.php(259): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\BaseModel.php(774): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\cenkaros\app\Controllers\Gost.php(58): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Gost->zahtev_za_registraciju()
+#9 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gost))
+#10 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#13 {main}

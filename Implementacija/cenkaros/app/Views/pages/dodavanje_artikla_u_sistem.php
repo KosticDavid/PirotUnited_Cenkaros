@@ -19,69 +19,53 @@
                 font-size: 20px;
             }
         </style>
-		<table id="veca" >
+        <table id="veca" >
             <tr>
                 <th colspan="2"align="left">
                     Naziv artikla 
                 </th>
-            </tr>
-            <tr>
-                <td>
-                    Brasno
-                </td>
                 <td rowspan="8"> 
-                    <table id="manja">
-                        <tr>
-                            <td>
-                                Naziv novog artikla:
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2"> <button>Dodaj</button></td>
-                        </tr>
-                    </table>
+                    <form method="POST" action="<?php echo site_url('Administrator/dodajA');?>">
+                        <table id="manja">
+                            <tr>
+                                <td>
+                                    Naziv novog artikla:
+                                </td>
+                                <td>
+                                    <input type="text" name="naziv">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Jedinica mere:
+                                </td>
+                                <td>
+                                    <input type="text" name="jm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Tagovi:
+                                </td>
+                                <td>
+                                    <textarea name="tags"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"> <button>Dodaj</button></td>
+                            </tr>
+                        </table>
+                    </form>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    Sir 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Mleko 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Med
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Jagode
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Prasak
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    Kecap
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    Majonez
-                </td>
-            </tr>
+            <?php 
+                foreach ($artikli as $a)
+                {
+                    echo "<tr><td>";
+                    echo $a->naziv;
+                    echo "</td></tr>";
+                }
+            ?>
             
         </table>
 	</div>

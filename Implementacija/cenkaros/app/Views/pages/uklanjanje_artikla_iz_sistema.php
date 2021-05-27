@@ -19,57 +19,27 @@
                 font-size: 40px;
             }
         </style>
-		<table id="veca" >
-            <tr>
-                <th colspan="2"align="left">
-                    Naziv artikla 
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    Brasno
-                </td>
-                <td rowspan="8" id="dugme">
-                    <button>Ukloni</button> 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Sir 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Mleko 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Med
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Jagode
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Prasak
-                </td>
-            </tr>
+        <table id="veca" >
+                <tr>
+                    <th>
+                        Naziv artikla 
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                
+                    <?php 
+                    foreach($artikli as $a)
+                    {
+                        echo "<form method='POST' action='";
+                        echo site_url("Administrator/ukloniA/{$a->idArtikla}");
+                        echo "'><tr><td>";
+                        echo $a->naziv;
+                        echo "</td><td id='dugme'><button>Ukloni</button></td></tr></form>";
+                    }
+                    ?>
+                
+            </table>
             
-            <tr>
-                <td>
-                    Kecap
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    Majonez
-                </td>
-            </tr>
-            
-        </table>
 	</div>

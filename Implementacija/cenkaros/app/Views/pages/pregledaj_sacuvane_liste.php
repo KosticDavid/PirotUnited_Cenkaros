@@ -8,31 +8,25 @@
 				<td>Obrisi</td>
                     </tr>
                     <?php
-//                for($i=0; $i<count($liste); $i++)
-//                {
-//                    echo '<tr><td>';
-//                    echo $i;
-//                    echo "</td><td>";
-////                    echo $liste[$i]->getNaziv();
-//                    echo "</td><td>";
-////                    echo $lista->getIdsadrzi()[0]->getKolicina();
-//                    echo '</td><td><a href="pregledaj_listu.html">Izmeni</a>';
-//                    echo '</td><td><a href="#">Obrisi</a></td></tr>';
-//                } ?>
-			
-<!--			<tr>
-				<td>1.</td>
-				<td>Svakodnevne namirnice</td>
-				<td>3</td>
-				<td><a href="pregledaj_listu.html">Izmeni</a></td>
-				<td><a href="#">Obrisi</a></td>
-			</tr>
-			<tr>
-				<td>2.</td>
-				<td>Meso</td>
-				<td>3</td>
-				<td><a href="izmeni_listu.html">Izmeni</a></td>
-				<td><a href="#">Obrisi</a></td>
-			</tr>-->
+                    for($i=0; $i<count($liste); $i++)
+                    {
+                        $a = 0;
+                        foreach($sadrzi as $s)
+                        {
+                            if(($s->idListe)==($liste[$i]->idListe))$a++;
+                        }
+                        echo '<tr><td>';
+                        echo $i+1;
+                        echo "</td><td>";
+                        echo $liste[$i]->naziv;
+                        echo "</td><td>";
+                        echo $a;
+                        echo '</td><td><a href="';
+                        echo site_url("/");
+                        echo '">Izmeni</a>';
+                        echo '</td><td><a href="';
+                        echo site_url("/Kupac/obrisi_listu/{$liste[$i]->idListe}");
+                        echo '">Obrisi</a></td></tr>';
+                    } ?>
 		</table>
 	</div>
