@@ -52,8 +52,8 @@ class BazniKontroler extends Controller
 	{
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
+                //Zapocinje sesiju
                 $this->session= session();
-                $this->doctrine= \Config\Services::doctrine();
 		//--------------------------------------------------------------------
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------

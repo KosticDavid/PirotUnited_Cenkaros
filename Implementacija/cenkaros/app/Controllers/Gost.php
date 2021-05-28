@@ -6,6 +6,8 @@ use App\Controllers\BazniKontroler;
 class Gost extends BazniKontroler
 {
     
+    //Pomocna funkcija koja postavlja controller u data i onda prikazuje 
+    //header gosta, trazenu stranicu i footer sa data nizom prosledjenim
     protected function show($page, $data=[])
     {
         $data['controller']='Gost';
@@ -13,32 +15,51 @@ class Gost extends BazniKontroler
         echo view("pages\\$page",$data);
         echo view("templates\\footer",$data);
     }
-        
+    
+    //Ukoliko se trazi index preusmeri na metod prijava
     public function index()
     {
         return redirect()->to(site_url('Gost/prijava'));
     }
 
+    //Poziva prikaz stranice za prijavu sa mogucom prosledjenom porukom
     public function prijava($poruka="")
     {
         $this->show('prijava',['poruka'=>$poruka]);
     }
     
+    //Poziva prikaz stranice za registraciju sa mogucom prosledjenom porukom
     public function registracija($poruka="")
     {
         $this->show('slanje_zahteva_za_registraciju',['poruka'=>$poruka]);
     }
     
+    //Poziva prikaz stranice za dodavanje radnje sa mogucom prosledjenom porukom
+    public function dodavanje_radnje($poruka="")
+    {
+        $this->show('dodavanje_radnje_u_sistem',['poruka'=>$poruka]);
+    }
+    
+    //Poziva prikaz stranice o_nama
     public function o_nama()
     {
         $this->show('o_nama',[]);
     }
     
+    //Poziva prikaz stranice kontakt
     public function kontakt()
     {
         $this->show('kontakt',[]);
     }
     
+    //Funkcija koja vrsi prijavljivanje na sistem
+    //Prvo validira sva polje i ako postoje neispravne vrednosti vraca se na
+    //stranicu za prijavu sa tekstom problema. Onda uradi hesovanje sifre.
+    //Potrazi korisnika sa datim korisnickim imenom i ukoliko ne postoji ispise
+    //da korisnik sa tim imenom ne postoji. Proveri sifru sa prosledjenom i ako
+    //nije ispravna ispise da sifra nije ispravna. Inace zapamti potrebne stvari
+    //u sesiju i predje na odgovarajuci kontroler ili nazad na formu za prijavu 
+    //sa porukom da nalog nije aktiviran ako je radnja i dalje neaktivna
     public function zahtev_za_prijavu()
     {
         if(!$this->validate(['uname'=>'required|min_length[5]|max_length[30]', 'pword'=>'required|min_length[8]|max_length[20]']))
@@ -67,9 +88,15 @@ class Gost extends BazniKontroler
         return $this->prijava('Korisnik sa tim imenom ne postoji');
     }
     
+    //Funkcija koja vrsi registraciju na sistem
+    //Prvo validira sva polje i ako postoje neispravne vrednosti vraca se na
+    //stranicu za registraciju sa tekstom problema. Onda proveri da li postoji
+    //korisnik sa datim korisnickim imenom i ako postoji ispise da je korisnicko
+    //ime zauzeto. Onda proveri da li postoji korisnik sa datim email u bazi i 
+    //ako postoji ispise da je email zauzet. Ukoliko prodje do ovde samo unese
+    //korisnika u bazu i predje na stranicu za prijavu
     public function zahtev_za_registraciju()
     {
-        
         if(!$this->validate(['uname'=>'required|min_length[5]|max_length[30]', 'email'=>'required|min_length[10]|max_length[30]', 'pword1'=>'required|min_length[8]|max_length[20]', 'pword2'=>'required|min_length[8]|max_length[20]|matches[pword1]']))
             return $this->registracija($this->validator->getErrors());
         $km = new korisnikModel();
@@ -78,7 +105,7 @@ class Gost extends BazniKontroler
         if(count($kIme)>0) return $this->registracija(['Korisnicko ime je zauzeto']);
         if(count($email)>0) return $this->registracija(['Email se vec koristi']);
         $km->insert([ 'kIme'=>$this->request->getVar('uname'), 'sifra'=>$pwordhash = hash("sha256",$this->request->getVar('pword1')), 'email'=>$this->request->getVar('email'), 'tipKorisnika'=>$this->request->getVar('tip') ]);
-        return $this->registracija('Vas nalog je dodat');
+        return $this->prijava('Vas nalog je dodat');
         
     }
     

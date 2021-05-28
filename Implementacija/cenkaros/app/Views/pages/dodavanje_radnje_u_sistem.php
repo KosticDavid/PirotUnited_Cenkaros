@@ -106,7 +106,7 @@
                 </div>
                 <div class="col-2"></div>
                 <div class="col-4">
-					<img src="img/mapa.jpg" width="300px" height="250px">
+                    <img src="<?php echo site_url("img/mapa.jpg")?>" width="300px" height="250px">
 					<br/>
 					<button class="btn btn-primary"> Dodaj </button>
 				</div>

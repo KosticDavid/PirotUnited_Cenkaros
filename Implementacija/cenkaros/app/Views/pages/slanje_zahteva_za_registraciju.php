@@ -11,7 +11,7 @@
                 <br>
                 <p>Tip naloga</p>
                 <select name="tip" id="">
-                        <option value="1">Kupac</option>
+                        <option value="2">Kupac</option>
                         <option value="3">Predstavnik radnje</option>
                 </select>
                 <br>

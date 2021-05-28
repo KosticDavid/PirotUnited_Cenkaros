@@ -2,12 +2,18 @@
 
 use CodeIgniter\Model;
 
+//Klasa koja predstavlja tabelu artikal u bazi
 class ArtikalModel extends Model
 {
-        protected $table      = 'artikal';
-        protected $primaryKey = 'idArtikla';
-        protected $returnType = 'object';
-        protected $allowedFields = ['naziv','jedinicaMere','tags'];
+    
+    //Naziv tabele koju ova klasa predstavlja
+    protected $table      = 'artikal';
+    //Naziv kolone primarnog kljuca u tabeli
+    protected $primaryKey = 'idArtikla';
+    //Povratni tip reda iz tabele(moze da bude objekat ili niz)
+    protected $returnType = 'object';
+    //Kolone koje smeju da se menjaju
+    protected $allowedFields = ['naziv','jedinicaMere','tags'];
         
 }
 
