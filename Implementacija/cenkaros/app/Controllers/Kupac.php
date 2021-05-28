@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\ListaModel;
 use App\Models\SadrziModel;
+use App\Models\ArtikalModel;
 
 class Kupac extends BazniKontroler
 {
@@ -66,6 +67,21 @@ class Kupac extends BazniKontroler
         foreach($sadrzi as $s)$sm->delete($s->idSadrzi);
         $lm->delete($idL);
         return redirect()->to(site_url("/Kupac/sacuvane_liste"));
+    }
+    
+    public function pregledaj_listu($idListe=-1)
+    {
+        $lista = new ListaModel();
+        $sadrzi = new SadrziModel();
+        $artikal = new ArtikalModel();
+        
+        $l = $lista->find($idListe);
+        $s = $sadrzi->pretraga_idL($idListe);
+        $artiklici = [];
+        foreach($s as $sadr){
+            $artiklici[] = $artikal->find($sadr->idArtikla);
+        }
+        $this->show('pregledaj_listu', ["lista" => $l, "sadrzi" => $s, "artikli" => $artiklici]);
     }
     
 }

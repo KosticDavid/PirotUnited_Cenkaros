@@ -11,8 +11,23 @@
 				<td>Kolicina</td>
 				<td></td>
 			</tr>
-			<tr>
-				<td>1.</td>
+                        <?php 
+                            if(isset($lista))
+                            {
+                                for($i=0; $i<count($artikli); $i++)
+                                {
+                                    echo "<tr><td>";
+                                    echo $i+1;
+                                    echo "</td><td>";
+                                    echo $artikli[$i]->naziv;
+                                    echo "</td><td><input type='number' name='' id='' value='";
+                                    echo $sadrzi[$i]->kolicina;
+                                    echo "'></td><td><a href='#'>Ukloni</a></td></tr>";
+                                }
+                            }
+                        ?>
+<!--<tr>-->
+<!--				<td>1.</td>
 				<td>Mleko</td>
 				<td><input type="number" name="" id="" value="1"></td>
 				<td><a href="#">Ukloni</a></td>
@@ -28,7 +43,7 @@
 				<td>Jaja</td>
 				<td><input type="number" name="" id="" value="2"></td>
 				<td><a href="#">Ukloni</a></td>
-			</tr>
+			</tr>-->
 		</table>
 		<br>
 		<p>Izaberite fajl</p>

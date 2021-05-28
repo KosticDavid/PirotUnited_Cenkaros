@@ -2,6 +2,7 @@
 
 use App\Models\KorisnikModel;
 use App\Controllers\BazniKontroler;
+use App\Models\RadnjaModel;
 
 class Gost extends BazniKontroler
 {
@@ -107,6 +108,80 @@ class Gost extends BazniKontroler
         $km->insert([ 'kIme'=>$this->request->getVar('uname'), 'sifra'=>$pwordhash = hash("sha256",$this->request->getVar('pword1')), 'email'=>$this->request->getVar('email'), 'tipKorisnika'=>$this->request->getVar('tip') ]);
         return $this->prijava('Vas nalog je dodat');
         
+    }
+    
+    public function dodaj_radnju()
+    {
+       $imeR = $this->request->getVar("imeR");
+       $pib = $this->request->getVar("pib");
+       $gs = $this->request->getVar("geosir");
+       $gd = $this->request->getVar("geoduz");
+       $pon = $this->request->getVar("pon");
+       $uto = $this->request->getVar("uto");
+       $sre = $this->request->getVar("sre");
+       $cet = $this->request->getVar("cet");
+       $pet = $this->request->getVar("pet");
+       $sub = $this->request->getVar("sub");
+       $ned = $this->request->getVar("ned");
+       $pon1 = $this->request->getVar("pon1");
+       $uto1 = $this->request->getVar("uto1");
+       $sre1 = $this->request->getVar("sre1");
+       $cet1 = $this->request->getVar("cet1");
+       $pet1 = $this->request->getVar("pet1");
+       $sub1 = $this->request->getVar("sub1");
+       $ned1 = $this->request->getVar("ned1");
+       $pon2 = $this->request->getVar("pon2");
+       $uto2 = $this->request->getVar("uto2");
+       $sre2 = $this->request->getVar("sre2");
+       $cet2 = $this->request->getVar("cet2");
+       $pet2 = $this->request->getVar("pet2");
+       $sub2 = $this->request->getVar("sub2");
+       $ned2 = $this->request->getVar("ned2");
+       
+       $rd = "";
+       if($pon == "on")
+           $rd = $rd."1";
+       else
+           $rd = $rd."0";
+       if($uto == "on")
+           $rd = $rd."1";
+       else
+           $rd = $rd."0";
+       if($sre == "on")
+           $rd = $rd."1";
+       else
+           $rd = $rd."0";
+       if($cet == "on")
+           $rd = $rd."1";
+       else
+           $rd = $rd."0";
+       if($pet == "on")
+           $rd = $rd."1";
+       else
+           $rd = $rd."0";
+       if($sub == "on")
+           $rd = $rd."1";
+       else
+           $rd = $rd."0";
+       if($ned == "on")
+           $rd = $rd."1";
+       else
+           $rd = $rd."0";
+       
+       $rv = "";
+       
+       $r = new RadnjaModel();
+       $data = [
+           "naziv" => $imeR,
+           "pib" => $pib,
+           "sirina" => $gs,
+           "duzina" => $gd,
+           "radniDani" => $rd,
+           "radnoVreme" => $rv,
+           "idPredstavnika" => 1
+       ];
+       $r->insert($data);
+       echo $pon;
     }
     
 }
