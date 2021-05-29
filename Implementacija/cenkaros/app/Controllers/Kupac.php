@@ -103,7 +103,6 @@ class Kupac extends BazniKontroler
             
             $l = $lista->find($idListe);
             $s = $sadrzi->pretraga_idL($idListe);
-            $artiklici = [];
             $clanovi = "";
             foreach($s as $sadr){
                 $artikli[]= $sadr->idArtikla;
@@ -215,7 +214,6 @@ class Kupac extends BazniKontroler
         $idK = $this->session->get("idK");
         $lm = new ListaModel();
         $sm = new SadrziModel();
-        $am = new ArtikalModel();
         if($idL == NULL)
         {
             $data = ["naziv"=>$naziv, "idKorisnik"=>$idK];
@@ -237,9 +235,12 @@ class Kupac extends BazniKontroler
             $sadrzi = $sm->pretraga_idL($idL);
             foreach ($sadrzi as $s)$sm->delete($s->idSadrzi);
             $naziv = $lm->find($idL)->naziv;
+            
+            //REMOVE WHEN REROUTING
             $lm->delete($idL);
             $data = ["naziv"=>$naziv, "idKorisnik"=>$idK];
             $idL = $lm->insert($data);
+            //--------------------------------
             
             $liste = explode(";",$this->session->get("lista"));
             foreach($liste as $l)
