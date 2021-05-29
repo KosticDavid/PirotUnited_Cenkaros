@@ -4,6 +4,9 @@ namespace App\Controllers;
 use App\Models\ListaModel;
 use App\Models\SadrziModel;
 use App\Models\ArtikalModel;
+use App\Models\RadnjaModel;
+use App\Models\ProdajeModel;
+
 
 class Kupac extends BazniKontroler
 {
@@ -47,6 +50,60 @@ class Kupac extends BazniKontroler
         $this->show('cuvanje_liste',[]);
     }
     
+    public function ispis(){
+        $radnja = new RadnjaModel();
+        $sve_radnje = $radnja->findAll();
+        $nazivi = [];
+        $cene = [];
+        $lokacije_duzine=[];
+        $lokacije_sirine=[];
+        
+        foreach ($sve_radnje as $sr){
+            $nazivi[] = $sr->naziv;
+            $cene[] = rand(500,3000);
+            $lokacije_duzine[] = $sr->duzina;
+            $lokacije_sirine[] = $sr->sirina;
+        }
+        $data = ["nazivi" => $nazivi, "cene"=>$cene, "duzine"=>$lokacije_duzine, "sirine"=>$lokacije_sirine];
+        
+        $this->show('ispis',$data);
+    }
+    
+    public function biranje_radnje(){
+        $radnja = new RadnjaModel();
+        $prodaje = new ProdajeModel();
+        $sve_radnje = $radnja->findAll();
+        $nasa_sirina= $this->deg2rad(44.80552851014836);
+        $nasa_duzina= $this->deg2rad(20.47620173888814);
+        $razdaljina = 999.99999;
+        $u_opsegu = [];
+        
+        foreach ($sve_radnje as $sr){
+            $njihova_sirina = $this->deg2rad($sr->sirina);
+            $njihova_duzina = $this->deg2rad($sr->duzina);
+            $delta_fi = $njihova_sirina - $nasa_sirina;
+            $delta_lambda = $njihova_duzina - $nasa_duzina;
+            $fi_m = ($nasa_sirina + $njihova_sirina)/2;
+            $r = 6371009;
+            $d = $r*sqrt(pow($delta_fi, 2)+pow((cos($fi_m)* $delta_lambda),2));
+            if($d < $razdaljina){
+                echo $sr->naziv;
+                echo '</br>';
+                echo $d;
+                echo '</br>';
+            
+            }
+            
+            
+        }
+        
+    }
+    
+    protected function deg2rad($deg){
+        return M_PI * $deg / 180.0000;
+    }
+
+
     //Funkcija za prikaz sacuvanih lista
     //Dohvate se sve liste koje pripadaju korisniku sa idKorisnika idK
     //Dohvate se svi sadrzi. Onda se prebaci na prikaz sacuvanih lista sa njima.
@@ -256,6 +313,9 @@ class Kupac extends BazniKontroler
         $this->session->remove("lista");
         return redirect()->to(site_url("Kupac/sacuvane_liste/"));
     }
+    
+    
+    
     
     public function odjavi_se()
     {
