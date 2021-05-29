@@ -134,4 +134,10 @@ class Administrator extends BazniKontroler
         $this->show('kontakt',[]);
     }
     
+    public function odjavi_se()
+    {
+        $this->session->destroy();
+        return redirect()->to(site_url("Gost/index/"));
+    }
+    
 }

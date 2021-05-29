@@ -12,7 +12,7 @@ class ListaModel extends Model
     //Povratni tip reda iz tabele(moze da bude objekat ili niz)
     protected $returnType = 'object';
     //Kolone koje smeju da se menjaju
-    protected $allowedFields = ['naziv','idKorisnika'];
+    protected $allowedFields = ['naziv','idKorisnik'];
 
     //Funkcija vraca sve redove koji imaju prosledjen idKorisnika
     public function pretraga_idK($idK) {

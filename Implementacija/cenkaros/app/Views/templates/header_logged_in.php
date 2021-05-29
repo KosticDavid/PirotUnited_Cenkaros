@@ -19,6 +19,6 @@
 			<a class="nav-element" href="<?php echo site_url($controller); ?>">Pocetna</a>
 			<a class="nav-element" href="<?php echo site_url($controller."/o_nama"); ?>">O nama</a>
 			<a class="nav-element" href="<?php echo site_url($controller."/kontakt"); ?>">Kontakt</a>
-			<a class="nav-element" href="#">Odjavi se</a>
+			<a class="nav-element" href="<?php echo site_url($controller."/odjavi_se"); ?>">Odjavi se</a>
 		</div>
 	</div>
