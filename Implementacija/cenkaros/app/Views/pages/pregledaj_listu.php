@@ -78,10 +78,12 @@
                         ?>
 		</table>
 		<br>
+                <form method="POST" enctype="multipart/form-data" action='<?php echo site_url("Kupac/dodaj_automatski"); ?>'>
 		<p>Izaberite fajl</p>
-		<input type="file" id="" name="" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+		<input type="file" id="" name="list" accept=".csv">
 		<br>
-		<button>Dodaj listu iz fajla</button>
+                <button>Dodaj</button>
+                </form>
 		<br>
                 <form action="<?php echo site_url('Kupac/cuvanje_liste');?>" method="POST">
 			<button>Sacuvaj listu</button>

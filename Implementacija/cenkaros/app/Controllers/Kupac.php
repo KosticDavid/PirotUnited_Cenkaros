@@ -79,6 +79,51 @@ class Kupac extends BazniKontroler
         $this->show('ispis',$data);
     }
     
+    public function dodaj_automatski()
+    {
+        
+        $file = $this->request->getFile('list');
+        $csv = $file->openFile('r');
+        $lis = $this->session->get("lista");
+        $liste = explode(";",$lis);
+        $ids = [];
+        $kol = [];
+        foreach ($liste as $l)
+        {
+            if($l=="")break;
+            $ll = explode(",", $l);
+            $ids[] = $ll[0];
+            $kol[] = $ll[1];
+        }
+        foreach ($csv as $row)
+        {
+            $a = explode(",", $row);
+            $flag = true;
+            for($i=0; $i<count($ids); $i++)
+            {
+                if($ids[$i]==$a[0])
+                {
+                    $kol[$i] = intval($kol[$i]) + intval($a[1]);
+                    $flag = false;
+                    break;
+                }
+            }
+            if($flag)
+            {
+                $ids[] = $a[0];
+                $kol[] = $a[1];
+            }
+        }
+        $res = "";
+        for($i=0; $i<count($ids); $i++)
+        {
+            $res = $res.$ids[$i].",".$kol[$i].";";
+        }
+        $this->session->set("lista",$res);
+        return redirect()->to(site_url("Kupac/pregledaj_listu/"));
+        
+    }
+    
     public function biranje_radnje(){
         $radnja = new RadnjaModel();
         $prodaje = new ProdajeModel();
