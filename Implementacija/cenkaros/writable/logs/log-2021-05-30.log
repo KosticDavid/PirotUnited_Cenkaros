@@ -1,0 +1,74 @@
+CRITICAL - 2021-05-30 06:32:37 --> Trying to get property 'idRadnje' of non-object
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Predstavnik.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 37, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Predstavnik->izmeni_radnju()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Predstavnik))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 06:53:57 --> Call to undefined method App\Models\ProdajeModel::andLike
+#0 C:\xampp\htdocs\cenkaros\app\Models\ProdajeModel.php(28): CodeIgniter\Model->__call('andLike', Array)
+#1 C:\xampp\htdocs\cenkaros\app\Controllers\Predstavnik.php(96): App\Models\ProdajeModel->pretraga_idA_idR('1', '1')
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Predstavnik->ukloni_artikal('1')
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Predstavnik))
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-05-30 06:56:59 --> Call to a member function delete() on array
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Predstavnik->ukloni_artikal('1')
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Predstavnik))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-30 07:15:47 --> Call to undefined method App\Models\ArtikalModel::where_not_in
+#0 C:\xampp\htdocs\cenkaros\app\Models\ArtikalModel.php(20): CodeIgniter\Model->__call('where_not_in', Array)
+#1 C:\xampp\htdocs\cenkaros\app\Controllers\Predstavnik.php(44): App\Models\ArtikalModel->pretraga_idA(Array)
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Predstavnik->izmeni_radnju()
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Predstavnik))
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-05-30 07:17:24 --> Call to undefined method App\Models\ArtikalModel::not_in
+#0 C:\xampp\htdocs\cenkaros\app\Models\ArtikalModel.php(20): CodeIgniter\Model->__call('not_in', Array)
+#1 C:\xampp\htdocs\cenkaros\app\Controllers\Predstavnik.php(44): App\Models\ArtikalModel->pretraga_idA(Array)
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Predstavnik->izmeni_radnju()
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Predstavnik))
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-05-30 07:17:33 --> Call to undefined method App\Models\ArtikalModel::where_in
+#0 C:\xampp\htdocs\cenkaros\app\Models\ArtikalModel.php(20): CodeIgniter\Model->__call('where_in', Array)
+#1 C:\xampp\htdocs\cenkaros\app\Controllers\Predstavnik.php(44): App\Models\ArtikalModel->pretraga_idA(Array)
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Predstavnik->izmeni_radnju()
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Predstavnik))
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-05-30 07:30:22 --> Too few arguments to function App\Controllers\Predstavnik::dodaj_artikal(), 0 passed in C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php on line 931 and exactly 1 expected
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Predstavnik->dodaj_artikal()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Predstavnik))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-30 07:30:39 --> Undefined variable: idR
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Predstavnik.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 93, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Predstavnik->dodaj_artikal()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Predstavnik))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 07:30:59 --> Trying to get property 'idRadnje' of non-object
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Predstavnik.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 93, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Predstavnik->dodaj_artikal()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Predstavnik))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}

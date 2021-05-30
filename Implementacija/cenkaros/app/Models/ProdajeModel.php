@@ -23,6 +23,10 @@ class ProdajeModel extends Model
     public function pretraga_idA($idA) {  
         return $this->like('idArtikla', $idA)->findAll();
     }
+    
+    public function pretraga_idA_idR($idA,$idR) {  
+        return $this->like('idArtikla', $idA)->like('idRadnje',$idR)->findAll();
+    }
         
 }
 

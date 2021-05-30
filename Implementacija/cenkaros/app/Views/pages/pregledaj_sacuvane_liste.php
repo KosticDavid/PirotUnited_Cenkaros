@@ -4,6 +4,7 @@
 				<td>Redni broj</td>
 				<td>Naziv</td>
 				<td>Broj artikala</td>
+				<td>Skini</td>
 				<td>Izmeni</td>
 				<td>Obrisi</td>
                     </tr>
@@ -22,7 +23,10 @@
                         echo "</td><td>";
                         echo $a;
                         echo '</td><td><a href="';
-                        echo site_url("/");
+                        echo site_url("/Kupac/pregledaj_listu/{$liste[$i]->idListe}");
+                        echo '">Skini</a>';
+                        echo '</td><td><a href="';
+                        echo site_url("/Kupac/pregledaj_listu/{$liste[$i]->idListe}");
                         echo '">Izmeni</a>';
                         echo '</td><td><a href="';
                         echo site_url("/Kupac/obrisi_listu/{$liste[$i]->idListe}");

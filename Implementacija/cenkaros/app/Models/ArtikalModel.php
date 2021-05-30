@@ -14,6 +14,11 @@ class ArtikalModel extends Model
     protected $returnType = 'object';
     //Kolone koje smeju da se menjaju
     protected $allowedFields = ['naziv','jedinicaMere','tags'];
+    
+    public function pretraga_idA($idA)
+    {
+        return $this->whereNotIn('idArtikla', $idA)->findAll();
+    }
         
 }
 

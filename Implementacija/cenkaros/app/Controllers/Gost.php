@@ -105,83 +105,114 @@ class Gost extends BazniKontroler
         $email = $km->pretraga_email($this->request->getVar('email'));
         if(count($kIme)>0) return $this->registracija(['Korisnicko ime je zauzeto']);
         if(count($email)>0) return $this->registracija(['Email se vec koristi']);
-        $km->insert([ 'kIme'=>$this->request->getVar('uname'), 'sifra'=>$pwordhash = hash("sha256",$this->request->getVar('pword1')), 'email'=>$this->request->getVar('email'), 'tipKorisnika'=>$this->request->getVar('tip') ]);
+        if($this->request->getVar('tip')==2)
+        {
+            $km->insert([ 'kIme'=>$this->request->getVar('uname'),
+                          'sifra'=>$pwordhash = hash("sha256",$this->request->getVar('pword1')),
+                          'email'=>$this->request->getVar('email'),
+                          'tipKorisnika'=>$this->request->getVar('tip')]);
+        }
+        else
+        {
+            $this->session->set("kIme",$this->request->getVar('uname'));
+            $this->session->set("sifra",hash("sha256",$this->request->getVar('pword1')));
+            $this->session->set("email",$this->request->getVar('email'));
+            $this->session->set("tipKorisnika",$this->request->getVar('tip'));
+            return redirect()->to(site_url("/Gost/dodavanje_radnje"));
+        }
         return $this->prijava('Vas nalog je dodat');
         
     }
     
     public function dodaj_radnju()
     {
-       $imeR = $this->request->getVar("imeR");
-       $pib = $this->request->getVar("pib");
-       $gs = $this->request->getVar("geosir");
-       $gd = $this->request->getVar("geoduz");
-       $pon = $this->request->getVar("pon");
-       $uto = $this->request->getVar("uto");
-       $sre = $this->request->getVar("sre");
-       $cet = $this->request->getVar("cet");
-       $pet = $this->request->getVar("pet");
-       $sub = $this->request->getVar("sub");
-       $ned = $this->request->getVar("ned");
-       $pon1 = $this->request->getVar("pon1");
-       $uto1 = $this->request->getVar("uto1");
-       $sre1 = $this->request->getVar("sre1");
-       $cet1 = $this->request->getVar("cet1");
-       $pet1 = $this->request->getVar("pet1");
-       $sub1 = $this->request->getVar("sub1");
-       $ned1 = $this->request->getVar("ned1");
-       $pon2 = $this->request->getVar("pon2");
-       $uto2 = $this->request->getVar("uto2");
-       $sre2 = $this->request->getVar("sre2");
-       $cet2 = $this->request->getVar("cet2");
-       $pet2 = $this->request->getVar("pet2");
-       $sub2 = $this->request->getVar("sub2");
-       $ned2 = $this->request->getVar("ned2");
        
-       $rd = "";
-       if($pon == "on")
-           $rd = $rd."1";
-       else
-           $rd = $rd."0";
-       if($uto == "on")
-           $rd = $rd."1";
-       else
-           $rd = $rd."0";
-       if($sre == "on")
-           $rd = $rd."1";
-       else
-           $rd = $rd."0";
-       if($cet == "on")
-           $rd = $rd."1";
-       else
-           $rd = $rd."0";
-       if($pet == "on")
-           $rd = $rd."1";
-       else
-           $rd = $rd."0";
-       if($sub == "on")
-           $rd = $rd."1";
-       else
-           $rd = $rd."0";
-       if($ned == "on")
-           $rd = $rd."1";
-       else
-           $rd = $rd."0";
-       
-       $rv = "";
-       
-       $r = new RadnjaModel();
-       $data = [
-           "naziv" => $imeR,
-           "pib" => $pib,
-           "sirina" => $gs,
-           "duzina" => $gd,
-           "radniDani" => $rd,
-           "radnoVreme" => $rv,
-           "idPredstavnika" => 1
-       ];
+        $imeR = $this->request->getVar("imeR");
+        $pib = $this->request->getVar("pib");
+        $gs = $this->request->getVar("geosir");
+        $gd = $this->request->getVar("geoduz");
+        $pon = $this->request->getVar("pon");
+        $uto = $this->request->getVar("uto");
+        $sre = $this->request->getVar("sre");
+        $cet = $this->request->getVar("cet");
+        $pet = $this->request->getVar("pet");
+        $sub = $this->request->getVar("sub");
+        $ned = $this->request->getVar("ned");
+        $pon1 = $this->request->getVar("pon1");
+        $uto1 = $this->request->getVar("uto1");
+        $sre1 = $this->request->getVar("sre1");
+        $cet1 = $this->request->getVar("cet1");
+        $pet1 = $this->request->getVar("pet1");
+        $sub1 = $this->request->getVar("sub1");
+        $ned1 = $this->request->getVar("ned1");
+        $pon2 = $this->request->getVar("pon2");
+        $uto2 = $this->request->getVar("uto2");
+        $sre2 = $this->request->getVar("sre2");
+        $cet2 = $this->request->getVar("cet2");
+        $pet2 = $this->request->getVar("pet2");
+        $sub2 = $this->request->getVar("sub2");
+        $ned2 = $this->request->getVar("ned2");
+        $kIme = $this->session->get("kIme");
+        $sifra = $this->session->get("sifra");
+        $email = $this->session->get("email");
+        $tip = $this->session->get("tip");
+
+        $rd = "";
+        if($pon == "on")
+            $rd = $rd."1";
+        else
+            $rd = $rd."0";
+        if($uto == "on")
+            $rd = $rd."1";
+        else
+            $rd = $rd."0";
+        if($sre == "on")
+            $rd = $rd."1";
+        else
+            $rd = $rd."0";
+        if($cet == "on")
+            $rd = $rd."1";
+        else
+            $rd = $rd."0";
+        if($pet == "on")
+            $rd = $rd."1";
+        else
+            $rd = $rd."0";
+        if($sub == "on")
+            $rd = $rd."1";
+        else
+            $rd = $rd."0";
+        if($ned == "on")
+            $rd = $rd."1";
+        else
+            $rd = $rd."0";
+
+        $pon12 = $pon1."-".$pon2;
+        $uto12 = $uto1."-".$uto2;
+        $sre12 = $sre1."-".$sre2;
+        $cet12 = $cet1."-".$cet2;
+        $pet12 = $pet1."-".$pet2;
+        $sub12 = $sub1."-".$sub2;
+        $ned12 = $ned1."-".$pon2;
+        $rv = $pon12.";".$uto12.";".$sre12.";".$cet12.";".$pet12.";".$sub12.";".$ned12;
+
+        $km = new KorisnikModel();
+        $idK = $km->insert([ 'kIme'=>$kIme,
+                      'sifra'=>$sifra,
+                      'email'=>$email,
+                      'tipKorisnika'=>3]);
+        $r = new RadnjaModel();
+        $data = [
+            "naziv" => $imeR,
+            "pib" => $pib,
+            "sirina" => $gs,
+            "duzina" => $gd,
+            "radniDani" => $rd,
+            "radnoVreme" => $rv,
+            "idPredstavnika" => $idK
+        ];
        $r->insert($data);
-       echo $pon;
+       return redirect()->to(site_url("Gost/prijava"));
     }
     
 }
