@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\KorisnikModel;
 use App\Models\RadnjaModel;
 use App\Models\ProdajeModel;
+use App\Models\ArtikalModel;
 
 class Predstavnik extends BazniKontroler
 {
@@ -28,7 +29,39 @@ class Predstavnik extends BazniKontroler
     //Poziva prikaz stranice za izmenu radnje
     public function izmeni_radnju()
     {
-        $this->show('radnja_dodavanje_ukljanjanje_promena',[]);
+        $idK = $this->session->get("idK");
+        $rm = new RadnjaModel();
+        $pm = new ProdajeModel();
+        $am = new ArtikalModel();
+        $radnja = $rm->pretraga_idK($idK);
+        $prodaje = $pm->pretraga_idR($radnja[0]->idRadnje);
+        $artikli = [];
+        $idA = [];
+        foreach($prodaje as $p) {
+            $artikli[] = $am->find($p->idArtikla);
+            $idA[] = $p->idArtikla;
+        }
+        $ne_prodajemo = $am->pretraga_idA($idA);
+        $data = ["artikli"=>$artikli,"prodaje"=>$prodaje, "ne_prodajemo"=>$ne_prodajemo];
+        $this->show('radnja_dodavanje_ukljanjanje_promena',$data);
+    }
+    
+    //Poziva prikaz stranice o_nama
+    public function o_nama()
+    {
+        $this->show('o_nama',[]);
+    }
+    
+    //Poziva prikaz stranice kontakt
+    public function kontakt()
+    {
+        $this->show('kontakt',[]);
+    }
+    
+    public function odjavi_se()
+    {
+        $this->session->destroy();
+        return redirect()->to(site_url("Gost/index/"));
     }
     
     //Funkcija za uklanjanje radnje
@@ -50,22 +83,36 @@ class Predstavnik extends BazniKontroler
         return redirect()->to("/Gost/index");
     }
     
-    //Poziva prikaz stranice o_nama
-    public function o_nama()
+    public function dodaj_artikal()
     {
-        $this->show('o_nama',[]);
+        $idK = $this->session->get("idK");
+        $idA = $this->request->getVar('idA');
+        $rm = new RadnjaModel();
+        $pm = new ProdajeModel();
+        $radnja = $rm->pretraga_idK($idK);
+        $pm->insert(["idArtikla"=>$idA,"idRadnje"=>$radnja[0]->idRadnje,"cena"=>0]);
+        return redirect()->to(site_url("/Predstavnik/izmeni_radnju"));
     }
     
-    //Poziva prikaz stranice kontakt
-    public function kontakt()
+    public function ukloni_artikal($idA)
     {
-        $this->show('kontakt',[]);
+        
+        $rm = new RadnjaModel();
+        $pm = new ProdajeModel();
+        $radnja = $rm->pretraga_idK($this->session->get("idK"));
+        $prodaje = $pm->pretraga_idA_idR($idA,$radnja[0]->idRadnje);
+        $pm->delete($prodaje[0]->idProdaje);
+        return redirect()->to(site_url("/Predstavnik/izmeni_radnju"));
     }
     
-    public function odjavi_se()
+    public function promeni_cenu_artikla($idA)
     {
-        $this->session->destroy();
-        return redirect()->to(site_url("Gost/index/"));
+        $rm = new RadnjaModel();
+        $pm = new ProdajeModel();
+        $radnja = $rm->pretraga_idK($this->session->get("idK"));
+        $prodaje = $pm->pretraga_idA_idR($idA,$radnja[0]->idRadnje);
+        $pm->update($prodaje[0]->idProdaje,[ 'cena' => $this->request->getVar('cena') ]);
+        return redirect()->to(site_url("/Predstavnik/izmeni_radnju"));
     }
     
 }
