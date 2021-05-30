@@ -1955,6 +1955,102 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAF5vWB2ynTbv/A="
 							}
+						},
+						{
+							"_type": "UMLPackageView",
+							"_id": "AAAAAAF5vcOIBYyEHTo=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"model": {
+								"$ref": "AAAAAAF5vcOIBIyCsCE="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAF5vcOIBYyFoTw=",
+									"_parent": {
+										"$ref": "AAAAAAF5vcOIBYyEHTo="
+									},
+									"model": {
+										"$ref": "AAAAAAF5vcOIBIyCsCE="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF5vcOIBYyGSMo=",
+											"_parent": {
+												"$ref": "AAAAAAF5vcOIBYyFoTw="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF5vcOIBYyHm4s=",
+											"_parent": {
+												"$ref": "AAAAAAF5vcOIBYyFoTw="
+											},
+											"font": "Arial;13;1",
+											"left": 133,
+											"top": 598,
+											"width": 59.99169921875,
+											"height": 13,
+											"text": "Modeli"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF5vcOIBYyIDlU=",
+											"_parent": {
+												"$ref": "AAAAAAF5vcOIBYyFoTw="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"width": 73.67724609375,
+											"height": 13,
+											"text": "(from Model)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF5vcOIBYyJ8uI=",
+											"_parent": {
+												"$ref": "AAAAAAF5vcOIBYyFoTw="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 128,
+									"top": 591,
+									"width": 69.99169921875,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAF5vcOIBYyGSMo="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAF5vcOIBYyHm4s="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAF5vcOIBYyIDlU="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAF5vcOIBYyJ8uI="
+									}
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 128,
+							"top": 576,
+							"width": 69.99169921875,
+							"height": 40,
+							"nameCompartment": {
+								"$ref": "AAAAAAF5vcOIBYyFoTw="
+							}
 						}
 					]
 				},
@@ -2059,7 +2155,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF5vWYUWnUIO4w="
 									},
-									"name": "page"
+									"name": "page",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -2067,7 +2164,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF5vWYUWnUIO4w="
 									},
-									"name": "data[]"
+									"name": "data[]",
+									"type": ""
 								}
 							]
 						},
@@ -2101,7 +2199,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF5vWag3HUd8co="
 									},
-									"name": "idA"
+									"name": "idA",
+									"type": ""
 								}
 							]
 						},
@@ -2135,7 +2234,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF5vWdzU3UyJ+c="
 									},
-									"name": "idK"
+									"name": "idK",
+									"type": ""
 								}
 							]
 						},
@@ -2194,7 +2294,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF5vWtUKXVZwFY="
 									},
-									"name": "page"
+									"name": "page",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -2202,7 +2303,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF5vWtUKXVZwFY="
 									},
-									"name": "data[]"
+									"name": "data[]",
+									"type": ""
 								}
 							]
 						},
@@ -2495,7 +2597,8 @@
 								"$ref": "AAAAAAF5vVoI6XN33xo="
 							},
 							"name": "request",
-							"visibility": "protected"
+							"visibility": "protected",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2504,7 +2607,8 @@
 								"$ref": "AAAAAAF5vVoI6XN33xo="
 							},
 							"name": "doctrine",
-							"visibility": "protected"
+							"visibility": "protected",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2513,7 +2617,8 @@
 								"$ref": "AAAAAAF5vVoI6XN33xo="
 							},
 							"name": "helpers",
-							"visibility": "protected"
+							"visibility": "protected",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -2563,6 +2668,14 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "Kontroleri"
+				},
+				{
+					"_type": "UMLPackage",
+					"_id": "AAAAAAF5vcOIBIyCsCE=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Modeli"
 				}
 			]
 		}
