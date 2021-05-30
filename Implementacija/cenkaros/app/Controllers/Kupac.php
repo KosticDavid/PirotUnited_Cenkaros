@@ -50,21 +50,31 @@ class Kupac extends BazniKontroler
         $this->show('cuvanje_liste',[]);
     }
     
+    public function maksimalna_razdaljina()
+    {
+        $this->show('maksimalna_razdaljina',[]);
+    }
+    
     public function ispis(){
-        $radnja = new RadnjaModel();
-        $sve_radnje = $radnja->findAll();
         $nazivi = [];
-        $cene = [];
         $lokacije_duzine=[];
         $lokacije_sirine=[];
+        $radno_vreme = [];
+        $radni_dani = [];
+        
+        $sve_radnje = $this->session->get("r");
+        $cene = $this->session->get("c");
+        $this->session->remove("r");
+        $this->session->remove("c");
         
         foreach ($sve_radnje as $sr){
             $nazivi[] = $sr->naziv;
-            $cene[] = rand(500,3000);
             $lokacije_duzine[] = $sr->duzina;
             $lokacije_sirine[] = $sr->sirina;
+            $radno_vreme[] = $sr->radnoVreme;
+            $radni_dani[] = $sr->radniDani;
         }
-        $data = ["nazivi" => $nazivi, "cene"=>$cene, "duzine"=>$lokacije_duzine, "sirine"=>$lokacije_sirine];
+        $data = ["nazivi" => $nazivi, "cene"=>$cene, "duzine"=>$lokacije_duzine, "sirine"=>$lokacije_sirine, "radno_vreme"=>$radno_vreme, "radni_dani"=>$radni_dani];
         
         $this->show('ispis',$data);
     }
@@ -75,7 +85,7 @@ class Kupac extends BazniKontroler
         $sve_radnje = $radnja->findAll();
         $nasa_sirina= $this->deg2rad(44.80552851014836);
         $nasa_duzina= $this->deg2rad(20.47620173888814);
-        $razdaljina = 999.99999;
+        $razdaljina = $this->request->getVar("max_razdaljina");
         $u_opsegu = [];
         
         foreach ($sve_radnje as $sr){
@@ -87,18 +97,68 @@ class Kupac extends BazniKontroler
             $r = 6371009;
             $d = $r*sqrt(pow($delta_fi, 2)+pow((cos($fi_m)* $delta_lambda),2));
             if($d < $razdaljina){
-                echo $sr->naziv;
-                echo '</br>';
-                echo $d;
-                echo '</br>';
+                $u_opsegu[] = $sr;
             
             }
-            
-            
         }
+        $l = explode(";",$this->session->get("lista"));
+        $odgovarajuce_radnje =[];
+        $cene_artikala = [];
+        
+        foreach ($u_opsegu as $op){
+            $flag = true; 
+            $cena_ukupna = 0;
+            foreach($l as $artikal){
+                if($artikal == '') break;
+                $a = explode(",", $artikal);
+                
+                $p = $prodaje->pretraga_idA_idR($a[0], $op->idRadnje);
+                if ($p == NULL){
+                    $flag = false;
+                    break;
+                }
+                if ($p[0]->cena == 0){
+                    $flag = false;
+                    break;                    
+                }    
+                $cena_ukupna += $p[0]->cena * $a[1];
+            }
+            if($flag){
+                $odgovarajuce_radnje[] = $op;
+                $cene_artikala[] = $cena_ukupna;
+            }
+
+        }
+        
+        for($i = 0; $i < count($odgovarajuce_radnje) -1 ; $i++){
+            for($j = $i+1; $j < count($odgovarajuce_radnje) ;$j++){
+                if($cene_artikala[$j] < $cene_artikala[$i]){
+                    $t = $cene_artikala[$j];
+                    $cene_artikala[$j] = $cene_artikala[$i];
+                    $cene_artikala[$i] = $t;
+                    
+                    $t = $odgovarajuce_radnje[$j];
+                    $odgovarajuce_radnje[$j] = $odgovarajuce_radnje[$i];
+                    $odgovarajuce_radnje[$i] = $t;
+                }
+            }
+        }
+        
+        $this->session->set("r",$odgovarajuce_radnje) ;
+        $this->session->set("c", $cene_artikala);
+        return redirect()->to(site_url("Kupac/ispis"));
+//        
+//        for($i = 0; $i < count($odgovarajuce_radnje); $i++){
+//            echo $odgovarajuce_radnje[$i]->naziv;
+//            echo '</br>';
+//            echo $cene_artikala[$i];
+//            echo '</br>';
+//        }
         
     }
     
+
+
     protected function deg2rad($deg){
         return M_PI * $deg / 180.0000;
     }

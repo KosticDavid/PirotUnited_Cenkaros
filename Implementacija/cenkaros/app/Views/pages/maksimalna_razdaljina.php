@@ -1,11 +1,12 @@
 <div id="content" class="razdaljina">
-        <table align="center">
+    <form action="<?php echo site_url('Kupac/biranje_radnje');?>" method="POST">
+         <table align="center">
             <tr>
                 <td>
-                    Maksimalna razdaljina:
+                    Maksimalna razdaljina u metrima:
                 </td>
                 <td>
-                    <input type="text">
+                    <input type="number" name="max_razdaljina" step="1">
                 </td>
             </tr>
             <tr>
@@ -16,4 +17,7 @@
                 </td>
             </tr>
         </table>
+    </form>
+
+   
     </div>

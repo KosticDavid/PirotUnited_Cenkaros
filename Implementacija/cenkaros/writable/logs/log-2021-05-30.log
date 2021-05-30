@@ -72,3 +72,59 @@ CRITICAL - 2021-05-30 07:30:59 --> Trying to get property 'idRadnje' of non-obje
 #4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
 #5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #6 {main}
+CRITICAL - 2021-05-30 10:32:53 --> Undefined array key 0
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 112)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->biranje_radnje()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 10:33:41 --> Undefined array key 0
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 113)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->biranje_radnje()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 10:36:02 --> Undefined array key 0
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(114): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 114)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->biranje_radnje()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 10:38:26 --> Attempt to read property "cena" on array
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 119)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->biranje_radnje()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 10:39:51 --> Undefined array key 0
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 115)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->biranje_radnje()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 10:55:08 --> Trying to access array offset on value of type float
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(136): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 136)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->biranje_radnje()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 10:57:16 --> Trying to access array offset on value of type float
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(136): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 136)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->biranje_radnje()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}

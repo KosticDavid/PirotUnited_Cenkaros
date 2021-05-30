@@ -86,6 +86,9 @@
                 <form action="<?php echo site_url('Kupac/cuvanje_liste');?>" method="POST">
 			<button>Sacuvaj listu</button>
 		</form>
-		<button>Pronadji najbolju radnju</button>
+                 <form action="<?php echo site_url('Kupac/maksimalna_razdaljina');?>" method="POST">
+                     <button>Pronadji najbolju radnju</button>
+		</form>
+		
 
 	</div>
