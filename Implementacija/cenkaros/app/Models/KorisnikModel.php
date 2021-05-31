@@ -16,17 +16,17 @@ class KorisnikModel extends Model
 
     //Funkcija vraca sve redove koji imaju prosledjeno kIme
     public function pretraga_kIme($kIme) {
-        return $this->like('kIme', $kIme)->findAll();
+        return $this->where('kIme', $kIme)->findAll();
     }
 
     //Funkcija vraca sve redove koji imaju prosledjen email
     public function pretraga_email($email) {
-        return $this->like('email', $email)->findAll();
+        return $this->where('email', $email)->findAll();
     }
 
     //Funkcija vraca sve redove koji imaju prosledjen email
     function pretrazi_tip($tip){
-        return $this->like('tipKorisnika', $tip)->findAll();
+        return $this->where('tipKorisnika', $tip)->findAll();
     }
         
 }

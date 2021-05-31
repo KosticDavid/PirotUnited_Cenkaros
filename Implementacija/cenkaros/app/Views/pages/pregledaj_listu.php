@@ -85,7 +85,12 @@
                 <button>Dodaj</button>
                 </form>
 		<br>
-                <form action="<?php echo site_url('Kupac/cuvanje_liste');?>" method="POST">
+                
+                <?php
+                $link = 'Kupac/sacuvaj_listu';
+                if($idL==-1) $link = 'Kupac/cuvanje_liste';
+                ?>
+                <form action="<?php echo site_url($link);?>" method="POST">
 			<button>Sacuvaj listu</button>
 		</form>
                  <form action="<?php echo site_url('Kupac/maksimalna_razdaljina');?>" method="POST">

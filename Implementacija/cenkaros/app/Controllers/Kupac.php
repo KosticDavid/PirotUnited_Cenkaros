@@ -24,6 +24,8 @@ class Kupac extends BazniKontroler
     //Poziva prikaz glavne stranice kupca
     public function index()
     {
+        $this->session->remove("idL");
+        $this->session->remove("lista");
         $this->show('main_kupac',[]);
     }
     
@@ -214,6 +216,9 @@ class Kupac extends BazniKontroler
     //Dohvate se svi sadrzi. Onda se prebaci na prikaz sacuvanih lista sa njima.
     public function sacuvane_liste()
     {
+        
+        $this->session->remove("idL");
+        $this->session->remove("lista");
         $idK = $this->session->get("idK");
         $lm = new ListaModel();
         $sm = new SadrziModel();
@@ -259,6 +264,7 @@ class Kupac extends BazniKontroler
         else if($idListe==-1)
         {
             $this->session->set("lista","");
+            $this->session->set("idL",-1);
         }
         else
         {
@@ -275,10 +281,12 @@ class Kupac extends BazniKontroler
             $this->session->set("idL",$idListe);
             $this->session->set("lista",$clanovi);
         }
-        $data = ["sviArtikli"=>$sviArtikli,
+        $data = [
+            "sviArtikli"=>$sviArtikli,
             "nazivi" => $nazivi,
             "kolicine" => $kolicine,
-            "artikli" => $artikli];
+            "artikli" => $artikli,
+            "idL" => $this->session->get("idL")];
         $this->show('pregledaj_listu', $data);
     }
     
@@ -336,7 +344,7 @@ class Kupac extends BazniKontroler
             if($l=="")break;
             $idA= explode(",", $l)[0];
             $kol= explode(",", $l)[1];
-            if($kol == 1) return redirect()->to(site_url("Kupac/ukloni_artikal/{$idArtikla}"));
+            if($kol == 1) $kol=$kol;
             else $kol = $kol-1;
             if($idA!=$idArtikla)
             {
@@ -376,7 +384,7 @@ class Kupac extends BazniKontroler
         $idK = $this->session->get("idK");
         $lm = new ListaModel();
         $sm = new SadrziModel();
-        if($idL == NULL)
+        if($idL == -1)
         {
             $data = ["naziv"=>$naziv, "idKorisnik"=>$idK];
             $idL = $lm->insert($data);
@@ -398,12 +406,6 @@ class Kupac extends BazniKontroler
             foreach ($sadrzi as $s)$sm->delete($s->idSadrzi);
             $naziv = $lm->find($idL)->naziv;
             
-            //REMOVE WHEN REROUTING
-            $lm->delete($idL);
-            $data = ["naziv"=>$naziv, "idKorisnik"=>$idK];
-            $idL = $lm->insert($data);
-            //--------------------------------
-            
             $liste = explode(";",$this->session->get("lista"));
             foreach($liste as $l)
             {
@@ -419,8 +421,21 @@ class Kupac extends BazniKontroler
         return redirect()->to(site_url("Kupac/sacuvane_liste/"));
     }
     
-    
-    
+    public function skini_listu($idL)
+    {
+        $sm = new SadrziModel();
+        $s = $sm->pretraga_idL($idL);
+        header('Content-Type: application/csv');
+        header('Content-Disposition: attachment; filename=example.csv');
+        header('Pragma: no-cache');
+        $i=0;
+        for(; $i<count($s)-1; $i++)
+        {
+            echo "{$s[$i]->idArtikla},{$s[$i]->kolicina}\n";
+        }
+        echo "{$s[$i]->idArtikla},{$s[$i]->kolicina}";
+        exit();
+    }
     
     public function odjavi_se()
     {
