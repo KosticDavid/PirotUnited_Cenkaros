@@ -34,9 +34,10 @@ class Predstavnik extends BazniKontroler
         $pm = new ProdajeModel();
         $am = new ArtikalModel();
         $radnja = $rm->pretraga_idK($idK);
-        $prodaje = $pm->pretraga_idR($radnja[0]->idRadnje);
+        if($radnja!=NULL)$prodaje = $pm->pretraga_idR($radnja[0]->idRadnje);
+        else $prodaje = [];
         $artikli = [];
-        $idA = [];
+        $idA = [-1];
         foreach($prodaje as $p) {
             $artikli[] = $am->find($p->idArtikla);
             $idA[] = $p->idArtikla;

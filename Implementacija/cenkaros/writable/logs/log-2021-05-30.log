@@ -128,3 +128,94 @@ CRITICAL - 2021-05-30 10:57:16 --> Trying to access array offset on value of typ
 #4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
 #5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #6 {main}
+CRITICAL - 2021-05-30 17:12:18 --> Call to a member function getName() on null
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-30 17:12:43 --> Call to a member function getName() on null
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-30 17:14:32 --> Call to a member function getName() on null
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-30 17:15:23 --> Call to a member function getName() on null
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-30 17:26:19 --> Undefined property: SplFileObject::$eof
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(87): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 87, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 17:26:54 --> Undefined property: CodeIgniter\HTTP\Files\UploadedFile::$eof
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(87): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 87, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 17:28:48 --> Call to undefined method CodeIgniter\HTTP\Files\UploadedFile::data()
+#0 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-05-30 17:33:21 --> Undefined property: App\Controllers\Kupac::$upload
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 86, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 17:42:02 --> Undefined variable: file
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 86, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 18:00:02 --> Use of undefined constant ids - assumed 'ids' (this will throw an Error in a future version of PHP)
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\xampp\\htdocs...', 102, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 18:00:40 --> A non well formed numeric value encountered
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(106): CodeIgniter\Debug\Exceptions->errorHandler(8, 'A non well form...', 'C:\\xampp\\htdocs...', 106, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-05-30 18:02:52 --> A non well formed numeric value encountered
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(106): CodeIgniter\Debug\Exceptions->errorHandler(8, 'A non well form...', 'C:\\xampp\\htdocs...', 106, Array)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}

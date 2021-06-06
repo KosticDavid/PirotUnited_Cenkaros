@@ -20,8 +20,8 @@
 								<input type="checkbox" name="pon">radi
 							</td>
 							<td>
-								<input name="pon1" type="time">
-								<input name="pon2" type="time">
+								<input name="pon1" type="time" value="00:00">
+								<input name="pon2" type="time" value="00:00">
 							</td>
 						</tr>
 						<tr>
@@ -33,8 +33,8 @@
 								
 							</td>
 							<td>
-								<input name="uto1" type="time">
-								<input name="uto2" type="time">
+								<input name="uto1" type="time" value="00:00">
+								<input name="uto2" type="time" value="00:00">
 							</td>
 						</tr>
 						<tr>
@@ -46,8 +46,8 @@
 								
 							</td>
 							<td>
-								<input name="sre1" type="time">
-								<input name="sre2" type="time">
+								<input name="sre1" type="time" value="00:00">
+								<input name="sre2" type="time" value="00:00">
 							</td>
 						</tr>
 						<tr>
@@ -58,8 +58,8 @@
 								<input type="checkbox" name="cet">radi
 							</td>
 							<td>
-								<input name="cet1" type="time">
-								<input name="cet2" type="time">
+								<input name="cet1" type="time" value="00:00">
+								<input name="cet2" type="time" value="00:00">
 							</td>
 						</tr>
 						<tr>
@@ -71,8 +71,8 @@
 								
 							</td>
 							<td>
-								<input name="pet1" type="time">
-								<input name="pet2" type="time">
+								<input name="pet1" type="time" value="00:00">
+								<input name="pet2" type="time" value="00:00">
 							</td>
 						</tr>
 						<tr>
@@ -83,8 +83,8 @@
 								<input type="checkbox" name="sub">radi
 							</td>
 							<td>
-								<input name="sub1" type="time">
-								<input name="sub2" type="time">
+								<input name="sub1" type="time" value="00:00">
+								<input name="sub2" type="time" value="00:00">
 							</td>
 						</tr>
 						<tr>
@@ -95,8 +95,8 @@
 								<input type="checkbox" name="ned">radi
 							</td>
 							<td>
-								<input name="ned1" type="time">
-								<input name="ned2" type="time">
+								<input name="ned1" type="time" value="00:00">
+								<input name="ned2" type="time" value="00:00">
 							</td>
 						</tr>
 					</table>

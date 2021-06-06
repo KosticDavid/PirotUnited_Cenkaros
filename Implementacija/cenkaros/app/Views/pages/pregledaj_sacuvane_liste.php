@@ -23,8 +23,8 @@
                         echo "</td><td>";
                         echo $a;
                         echo '</td><td><a href="';
-                        echo site_url("/Kupac/pregledaj_listu/{$liste[$i]->idListe}");
-                        echo '">Skini</a>';
+                        echo site_url("/Kupac/skini_listu/{$liste[$i]->idListe}");
+                        echo '" target="_newtab">Skini</a>';
                         echo '</td><td><a href="';
                         echo site_url("/Kupac/pregledaj_listu/{$liste[$i]->idListe}");
                         echo '">Izmeni</a>';
