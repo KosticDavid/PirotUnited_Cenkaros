@@ -16,9 +16,13 @@ class Filters extends BaseConfig
 	 * @var array
 	 */
 	public $aliases = [
-		'csrf'     => CSRF::class,
-		'toolbar'  => DebugToolbar::class,
-		'honeypot' => Honeypot::class,
+            'csrf'          => CSRF::class,
+            'toolbar'       => DebugToolbar::class,
+            'honeypot'      => Honeypot::class,
+            'gost'          => \App\Filters\GostFilter::class,
+            'kupac'         => \App\Filters\KupacFilter::class,
+            'predstavnik'   => \App\Filters\PredstavnikFilter::class,
+            'administrator' => \App\Filters\AdministratorFilter::class,
 	];
 
 	/**
@@ -58,5 +62,10 @@ class Filters extends BaseConfig
 	 *
 	 * @var array
 	 */
-	public $filters = [];
+	public $filters = [
+            'gost' => ['before' => ['Gost/*', 'Gost', '/']],
+            'kupac' => ['before' => ['Kupac/*', 'Kupac']],
+            'predstavnik' => ['before' => ['Predstavnik/*', 'Predstavnik']],
+            'administrator' => ['before' => ['Administrator/*', 'Administrator']],
+        ];
 }

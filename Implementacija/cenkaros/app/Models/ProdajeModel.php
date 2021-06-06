@@ -2,28 +2,64 @@
 
 use CodeIgniter\Model;
 
-//Klasa koja predstavlja vezu prodaje u bazi
+/**
+ * Klasa koja predstavlja vezu prodaje u bazi
+ * @author Milan Akik 2018/0688
+ * 
+ * @version 1.0
+ */
 class ProdajeModel extends Model
 {
-    //Naziv tabele koju ova klasa predstavlja
+    /**
+     * @var string $table Naziv tabele
+     */
     protected $table      = 'prodaje';
-    //Naziv kolone primarnog kljuca u tabeli
+    /**
+     * @var string $primaryKey Naziv primarnog kljuca
+     */
     protected $primaryKey = 'idProdaje';
-    //Povratni tip reda iz tabele(moze da bude objekat ili niz)
+    /**
+     * @var string $returnType Povratni tip
+     */
     protected $returnType = 'object';
-    //Kolone koje smeju da se menjaju
+    /**
+     * @var string $allowedFields Kolone sa dozvolom promene
+     */
     protected $allowedFields = ['cena','idRadnje','idArtikla'];
 
-    //Funkcija vraca sve redove koji imaju prosledjen idRadnje
-    public function pretraga_idR($idK) {  
-        return $this->like('idRadnje', $idK)->findAll();
+    /**
+    * Pretraga po idRadnje
+    *
+    * @param integer $idR idRadnje
+    *
+    * @return object[]
+    *
+    */
+    public function pretraga_idR($idR) {  
+        return $this->like('idRadnje', $idR)->findAll();
     }
 
-    //Funkcija vraca sve redove koji imaju prosledjen idArtikla
+    /**
+    * Pretraga po idArtikla
+    *
+    * @param integer $idA idArtikla
+    *
+    * @return object[]
+    *
+    */
     public function pretraga_idA($idA) {  
         return $this->like('idArtikla', $idA)->findAll();
     }
     
+    /**
+    * Pretraga po idArtikla i idRadnje
+    *
+    * @param integer $idA idArtikla
+    * @param integer $idR idRadnje
+    *
+    * @return object[]
+    *
+    */
     public function pretraga_idA_idR($idA,$idR) {  
         return $this->like('idArtikla', $idA)->like('idRadnje',$idR)->findAll();
     }

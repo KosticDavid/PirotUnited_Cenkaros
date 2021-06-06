@@ -7,11 +7,25 @@ use App\Models\RadnjaModel;
 use App\Models\ProdajeModel;
 use App\Models\ArtikalModel;
 
+/**
+ * Klasa koja predstavlja kontroler za predstavnika radnje
+ * @author Milena Djuric 2018/0630
+ * @author David Kostic 2016/0624
+ * 
+ * @version 1.0
+ */
 class Predstavnik extends BazniKontroler
 {
     
-    //Pomocna funkcija koja postavlja controller u data i onda prikazuje 
-    //header, trazenu stranicu i footer sa data nizom prosledjenim
+    /**
+    * Prikaz prosledjene stranice
+    *
+    * @param string $page stranica
+    * @param array $data podaci
+    *
+    * @return void
+    *
+    */
     protected function show($page, $data=[])
     {
         $data['controller']='Predstavnik';
@@ -20,13 +34,24 @@ class Predstavnik extends BazniKontroler
         echo view("templates\\footer",$data);
     }
     
-    //Poziva prikaz glavne stranice predstavnika
+    /**
+    * Prikaz indeksne stranice
+    *
+    * @return void
+    *
+    */
     public function index()
     {
         $this->show('main_predstavnik',[]);
     }
     
-    //Poziva prikaz stranice za izmenu radnje
+    /**
+    * Prikaz stranice za izmenu radnje sa svim artiklima i svim sto prodaje i
+    * svim sto ne prodaje ta radnja
+    *
+    * @return void
+    *
+    */
     public function izmeni_radnju()
     {
         $idK = $this->session->get("idK");
@@ -46,30 +71,47 @@ class Predstavnik extends BazniKontroler
         $data = ["artikli"=>$artikli,"prodaje"=>$prodaje, "ne_prodajemo"=>$ne_prodajemo];
         $this->show('radnja_dodavanje_ukljanjanje_promena',$data);
     }
-    
-    //Poziva prikaz stranice o_nama
+
+    /**
+    * Prikaz stranice o nama
+    *
+    * @return void
+    *
+    */
     public function o_nama()
     {
         $this->show('o_nama',[]);
     }
     
-    //Poziva prikaz stranice kontakt
+    /**
+    * Prikaz stranice kontakt
+    *
+    * @return void
+    *
+    */
     public function kontakt()
     {
         $this->show('kontakt',[]);
     }
     
+    /**
+    * Obrada odjave korisnika sa sistema
+    *
+    * @return void
+    *
+    */
     public function odjavi_se()
     {
         $this->session->destroy();
         return redirect()->to(site_url("Gost/index/"));
     }
     
-    //Funkcija za uklanjanje radnje
-    //Dohvati se idK iz sesijske promenljive. Na osnovu toga se dohvati radnja
-    //koja pripada tom korisniku. Na osnovu toga se dohvate i obrisu sve prodaje
-    //koje referenciraju tu radnju. Onda se obrise sama radnja. Onda se obrise i
-    //sam korisnik. Posle se predje na stranicu za prijavu u kontroleru Gost.
+    /**
+    * Obrada uklanjanja radnje
+    *
+    * @return void
+    *
+    */
     public function ukloni_radnju()
     {
         $km = new KorisnikModel();
@@ -84,6 +126,12 @@ class Predstavnik extends BazniKontroler
         return redirect()->to("/Gost/index");
     }
     
+    /**
+    * Obrada dodavanja artika u radnju
+    *
+    * @return void
+    *
+    */
     public function dodaj_artikal()
     {
         $idK = $this->session->get("idK");
@@ -95,6 +143,14 @@ class Predstavnik extends BazniKontroler
         return redirect()->to(site_url("/Predstavnik/izmeni_radnju"));
     }
     
+    /**
+    * Obrada uklanjanja artika iz radnje
+    * 
+    * @param integer $idA idArtikla
+    *
+    * @return void
+    *
+    */
     public function ukloni_artikal($idA)
     {
         
@@ -106,6 +162,14 @@ class Predstavnik extends BazniKontroler
         return redirect()->to(site_url("/Predstavnik/izmeni_radnju"));
     }
     
+    /**
+    * Obrada promene cene artikla u radnji
+    * 
+    * @param integer $idA idArtikla
+    *
+    * @return void
+    *
+    */
     public function promeni_cenu_artikla($idA)
     {
         $rm = new RadnjaModel();

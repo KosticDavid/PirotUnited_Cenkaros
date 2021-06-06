@@ -4,11 +4,26 @@ use App\Models\KorisnikModel;
 use App\Controllers\BazniKontroler;
 use App\Models\RadnjaModel;
 
+/**
+ * Klasa koja predstavlja kontroler za gosta
+ * @author Milena Djuric 2018/0630
+ * @author David Kostic 2016/0624
+ * 
+ * @version 1.0
+ */
 class Gost extends BazniKontroler
 {
     
-    //Pomocna funkcija koja postavlja controller u data i onda prikazuje 
-    //header gosta, trazenu stranicu i footer sa data nizom prosledjenim
+    
+    /**
+    * Prikaz prosledjene stranice
+    *
+    * @param string $page stranica
+    * @param array $data podaci
+    *
+    * @return void
+    *
+    */
     protected function show($page, $data=[])
     {
         $data['controller']='Gost';
@@ -17,50 +32,84 @@ class Gost extends BazniKontroler
         echo view("templates\\footer",$data);
     }
     
-    //Ukoliko se trazi index preusmeri na metod prijava
+    /**
+    * Prikaz indeksne stranice
+    *
+    * @return void
+    *
+    */
     public function index()
     {
         return redirect()->to(site_url('Gost/prijava'));
     }
 
-    //Poziva prikaz stranice za prijavu sa mogucom prosledjenom porukom
+    /**
+    * Prikaz stranice za prijavu na sistem
+    *
+    * @param string $poruka poruka
+    *
+    * @return void
+    *
+    */
     public function prijava($poruka="")
     {
         $this->show('prijava',['poruka'=>$poruka]);
     }
     
-    //Poziva prikaz stranice za registraciju sa mogucom prosledjenom porukom
+    /**
+    * Prikaz stranice za registraciju na sistem
+    *
+    * @param string $poruka poruka
+    *
+    * @return void
+    *
+    */
     public function registracija($poruka="")
     {
         $this->show('slanje_zahteva_za_registraciju',['poruka'=>$poruka]);
     }
     
-    //Poziva prikaz stranice za dodavanje radnje sa mogucom prosledjenom porukom
+    /**
+    * Prikaz stranice za registraciju radnje na sistem
+    *
+    * @param string $poruka poruka
+    *
+    * @return void
+    *
+    */
     public function dodavanje_radnje($poruka="")
     {
         $this->show('dodavanje_radnje_u_sistem',['poruka'=>$poruka]);
     }
     
-    //Poziva prikaz stranice o_nama
+    /**
+    * Prikaz stranice o nama
+    *
+    * @return void
+    *
+    */
     public function o_nama()
     {
         $this->show('o_nama',[]);
     }
     
-    //Poziva prikaz stranice kontakt
+    /**
+    * Prikaz stranice kontakt
+    *
+    * @return void
+    *
+    */
     public function kontakt()
     {
         $this->show('kontakt',[]);
     }
     
-    //Funkcija koja vrsi prijavljivanje na sistem
-    //Prvo validira sva polje i ako postoje neispravne vrednosti vraca se na
-    //stranicu za prijavu sa tekstom problema. Onda uradi hesovanje sifre.
-    //Potrazi korisnika sa datim korisnickim imenom i ukoliko ne postoji ispise
-    //da korisnik sa tim imenom ne postoji. Proveri sifru sa prosledjenom i ako
-    //nije ispravna ispise da sifra nije ispravna. Inace zapamti potrebne stvari
-    //u sesiju i predje na odgovarajuci kontroler ili nazad na formu za prijavu 
-    //sa porukom da nalog nije aktiviran ako je radnja i dalje neaktivna
+    /**
+    * Obrada zahteva za prijavu
+    *
+    * @return void
+    *
+    */
     public function zahtev_za_prijavu()
     {
         if(!$this->validate(['uname'=>'required|min_length[5]|max_length[30]', 'pword'=>'required|min_length[8]|max_length[20]']))
@@ -89,13 +138,12 @@ class Gost extends BazniKontroler
         return $this->prijava('Korisnik sa tim imenom ne postoji');
     }
     
-    //Funkcija koja vrsi registraciju na sistem
-    //Prvo validira sva polje i ako postoje neispravne vrednosti vraca se na
-    //stranicu za registraciju sa tekstom problema. Onda proveri da li postoji
-    //korisnik sa datim korisnickim imenom i ako postoji ispise da je korisnicko
-    //ime zauzeto. Onda proveri da li postoji korisnik sa datim email u bazi i 
-    //ako postoji ispise da je email zauzet. Ukoliko prodje do ovde samo unese
-    //korisnika u bazu i predje na stranicu za prijavu
+    /**
+    * Obrada zahteva za registraciju
+    *
+    * @return void
+    *
+    */
     public function zahtev_za_registraciju()
     {
         if(!$this->validate(['uname'=>'required|min_length[5]|max_length[30]', 'email'=>'required|min_length[10]|max_length[30]', 'pword1'=>'required|min_length[8]|max_length[20]', 'pword2'=>'required|min_length[8]|max_length[20]|matches[pword1]']))
@@ -124,6 +172,12 @@ class Gost extends BazniKontroler
         
     }
     
+    /**
+    * Obrada zahteva za registraciju radnje
+    *
+    * @return void
+    *
+    */
     public function dodaj_radnju()
     {
        

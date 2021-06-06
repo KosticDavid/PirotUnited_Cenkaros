@@ -2,22 +2,56 @@
 
 use CodeIgniter\Model;
 
-//Klasa koja predstavlja tabelu artikal u bazi
+/**
+ * Klasa koja predstavlja tabelu artikal u bazi
+ * @author Milan Akik 2018/0688
+ * 
+ * @version 1.0
+ */
 class ArtikalModel extends Model
 {
     
-    //Naziv tabele koju ova klasa predstavlja
+    /**
+     * @var string $table Naziv tabele
+     */
     protected $table      = 'artikal';
-    //Naziv kolone primarnog kljuca u tabeli
+    /**
+     * @var string $primaryKey Naziv primarnog kljuca
+     */
     protected $primaryKey = 'idArtikla';
-    //Povratni tip reda iz tabele(moze da bude objekat ili niz)
+    /**
+     * @var string $returnType Povratni tip
+     */
     protected $returnType = 'object';
-    //Kolone koje smeju da se menjaju
+    /**
+     * @var string $allowedFields Kolone sa dozvolom promene
+     */
     protected $allowedFields = ['naziv','jedinicaMere','tags'];
     
+    /**
+    * Pretraga po idArtikla
+    *
+    * @param integer $idA idArtikla
+    *
+    * @return object[]
+    *
+    */
     public function pretraga_idA($idA)
     {
         return $this->whereNotIn('idArtikla', $idA)->findAll();
+    }
+    
+    /**
+    * Pretraga po tagovima
+    *
+    * @param string $tags Query
+    *
+    * @return object[]
+    *
+    */
+    public function pretraga_tags($tags)
+    {
+        return $this->like('tags', $tags)->findAll();
     }
         
 }

@@ -2,19 +2,39 @@
 
 use CodeIgniter\Model;
 
-//Klasa koja predstavlja tabelu lista u bazi
+/**
+ * Klasa koja predstavlja tabelu lista u bazi
+ * @author Milan Akik 2018/0688
+ * 
+ * @version 1.0
+ */
 class ListaModel extends Model
 {
-    //Naziv tabele koju ova klasa predstavlja
+    /**
+     * @var string $table Naziv tabele
+     */
     protected $table      = 'lista';
-    //Naziv kolone primarnog kljuca u tabeli
+    /**
+     * @var string $primaryKey Naziv primarnog kljuca
+     */
     protected $primaryKey = 'idListe';
-    //Povratni tip reda iz tabele(moze da bude objekat ili niz)
+    /**
+     * @var string $returnType Povratni tip
+     */
     protected $returnType = 'object';
-    //Kolone koje smeju da se menjaju
+    /**
+     * @var string $allowedFields Kolone sa dozvolom promene
+     */
     protected $allowedFields = ['naziv','idKorisnik'];
 
-    //Funkcija vraca sve redove koji imaju prosledjen idKorisnika
+    /**
+    * Pretraga po idKorisnika
+    *
+    * @param integer $idK idKorisnika
+    *
+    * @return object[]
+    *
+    */
     public function pretraga_idK($idK) {
         return $this->like('idKorisnik', $idK)->findAll();
     }

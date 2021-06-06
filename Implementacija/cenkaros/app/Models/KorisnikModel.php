@@ -2,29 +2,63 @@
 
 use CodeIgniter\Model;
 
-//Klasa koja predstavlja tabelu korisnik u bazi
+/**
+ * Klasa koja predstavlja tabelu korisnik u bazi
+ * @author Milan Akik 2018/0688
+ * 
+ * @version 1.0
+ */
 class KorisnikModel extends Model
 {
-    //Naziv tabele koju ova klasa predstavlja
+    /**
+     * @var string $table Naziv tabele
+     */
     protected $table      = 'korisnik';
-    //Naziv kolone primarnog kljuca u tabeli
+    /**
+     * @var string $primaryKey Naziv primarnog kljuca
+     */
     protected $primaryKey = 'idKorisnik';
-    //Povratni tip reda iz tabele(moze da bude objekat ili niz)
+    /**
+     * @var string $returnType Povratni tip
+     */
     protected $returnType = 'object';
-    //Kolone koje smeju da se menjaju
+    /**
+     * @var string $allowedFields Kolone sa dozvolom promene
+     */
     protected $allowedFields = ['kIme','sifra','email','tipKorisnika'];
 
-    //Funkcija vraca sve redove koji imaju prosledjeno kIme
+    /**
+    * Pretraga po korisnickom imenu
+    *
+    * @param string $kIme korisnicko ime
+    *
+    * @return object[]
+    *
+    */
     public function pretraga_kIme($kIme) {
         return $this->where('kIme', $kIme)->findAll();
     }
 
-    //Funkcija vraca sve redove koji imaju prosledjen email
+    /**
+    * Pretraga po email-u
+    *
+    * @param string $email email
+    *
+    * @return object[]
+    *
+    */
     public function pretraga_email($email) {
         return $this->where('email', $email)->findAll();
     }
 
-    //Funkcija vraca sve redove koji imaju prosledjen email
+    /**
+    * Pretraga po tipu korisnika
+    *
+    * @param integer $tip tip korisnika
+    *
+    * @return object[]
+    *
+    */
     function pretrazi_tip($tip){
         return $this->where('tipKorisnika', $tip)->findAll();
     }

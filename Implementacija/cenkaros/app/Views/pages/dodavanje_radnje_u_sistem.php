@@ -1,8 +1,10 @@
-<div id="content">
-    <form action="<?php echo site_url('Gost/dodaj_radnju')?>" method = "POST">
+<!--Milena Djuric 2018/0630-->
+<div id="content" class="dodavanja_radnje">
+    <form class="forma_radnja" action="<?php echo site_url('Gost/dodaj_radnju')?>" method = "POST">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6" >
+                <div class="d-none d-md-block col-md-1" ></div>
+                <div class="col-12 col-md-6 kolona" >
                     <input type="text" name="imeR" required placeholder="Ime radnje">
                     <br/>
                     <input type="number" name="pib" required placeholder="PIB">
@@ -101,13 +103,13 @@
 						</tr>
 					</table>
                 </div>
-                <div class="col-2"></div>
-                <div class="col-4">
+                <div class="col-12 col-md-4 kolona">
                     <input type="number" name="geosir" step="any" placeholder="Geografska sirina"></br>
                     <input type="number" name="geoduz" step="any" placeholder="Geografska duzina"></br>
-					<br/>
-					<button class="btn btn-primary"> Dodaj </button>
-				</div>
+                    <br/>
+                    <button class="btn btn-primary"> Dodaj </button>
+                </div>
+                <div class="d-none d-md-block col-md-1" ></div>
             </div>
         </div>
         </form>

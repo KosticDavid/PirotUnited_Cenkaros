@@ -7,12 +7,25 @@ use App\Models\ArtikalModel;
 use App\Models\RadnjaModel;
 use App\Models\ProdajeModel;
 
-
+/**
+ * Klasa koja predstavlja kontroler za kupca
+ * @author Milena Djuric 2018/0630
+ * @author Milan Akik 2018/0688
+ * 
+ * @version 1.0
+ */
 class Kupac extends BazniKontroler
 {
     
-    //Pomocna funkcija koja postavlja controller u data i onda prikazuje 
-    //header, trazenu stranicu i footer sa data nizom prosledjenim
+    /**
+    * Prikaz prosledjene stranice
+    *
+    * @param string $page stranica
+    * @param array $data podaci
+    *
+    * @return void
+    *
+    */
     protected function show($page, $data=[])
     {
         $data['controller']='Kupac';
@@ -21,7 +34,12 @@ class Kupac extends BazniKontroler
         echo view("templates\\footer",$data);
     }
     
-    //Poziva prikaz glavne stranice kupca
+    /**
+    * Prikaz indeksne stranice
+    *
+    * @return void
+    *
+    */
     public function index()
     {
         $this->session->remove("idL");
@@ -29,34 +47,57 @@ class Kupac extends BazniKontroler
         $this->show('main_kupac',[]);
     }
     
-    //Poziva prikaz stranice o_nama
+    /**
+    * Prikaz stranice o nama
+    *
+    * @return void
+    *
+    */
     public function o_nama()
     {
         $this->show('o_nama',[]);
     }
     
-    //Poziva prikaz stranice kontakt
+    /**
+    * Prikaz stranice kontakt
+    *
+    * @return void
+    *
+    */
     public function kontakt()
     {
         $this->show('kontakt',[]);
     }
     
-    //Poziva prikaz stranice nova_lista
-    public function nova_lista()
-    {
-        $this->show('nova_lista',[]);
-    }
-    
+    /**
+    * Prikaz stranice za cuvanje liste
+    *
+    * @return void
+    *
+    */
     public function cuvanje_liste()
     {
         $this->show('cuvanje_liste',[]);
     }
     
+    /**
+    * Prikaz stranice za izbor maksimalne razdaljine radnje
+    *
+    * @return void
+    *
+    */
     public function maksimalna_razdaljina()
     {
         $this->show('maksimalna_razdaljina',[]);
     }
     
+    /**
+    * Prikaz stranice za ispis prikladnih radnji za listu
+    * prosledjuju se svi potrebni podaci za ispis
+    *
+    * @return void
+    *
+    */
     public function ispis(){
         $nazivi = [];
         $lokacije_duzine=[];
@@ -81,6 +122,12 @@ class Kupac extends BazniKontroler
         $this->show('ispis',$data);
     }
     
+    /**
+    * Obrada fajla i dodavanje artikala na listu automatski
+    *
+    * @return void
+    *
+    */
     public function dodaj_automatski()
     {
         
@@ -126,6 +173,12 @@ class Kupac extends BazniKontroler
         
     }
     
+    /**
+    * Biranje radnji koje prolaze kroz sve filtere
+    *
+    * @return void
+    *
+    */
     public function biranje_radnje(){
         $radnja = new RadnjaModel();
         $prodaje = new ProdajeModel();
@@ -203,17 +256,25 @@ class Kupac extends BazniKontroler
 //        }
         
     }
-    
 
-
+    /**
+    * Pretvaranje broja iz stepena u radijane
+    * 
+    * @param decimal $deg stepeni
+    *
+    * @return decimal
+    *
+    */
     protected function deg2rad($deg){
         return M_PI * $deg / 180.0000;
     }
 
-
-    //Funkcija za prikaz sacuvanih lista
-    //Dohvate se sve liste koje pripadaju korisniku sa idKorisnika idK
-    //Dohvate se svi sadrzi. Onda se prebaci na prikaz sacuvanih lista sa njima.
+    /**
+    * Prikaz stranice pregled sacuvanih listi kojoj se posalju sve nase liste
+    *
+    * @return void
+    *
+    */
     public function sacuvane_liste()
     {
         
@@ -228,9 +289,14 @@ class Kupac extends BazniKontroler
         $this->show('pregledaj_sacuvane_liste',$data);
     }
     
-    //Funkcija za brisanje liste
-    //Dohvate se svi sadrzi koji su u toj listi i obrisu. Onda se obrise lista.
-    //Onda se prebaci na prikaz sacuvanih lista.
+    /**
+    * Obrada brisanja liste
+    *
+    * @param integer $idL idListe
+    *
+    * @return void
+    *
+    */
     public function obrisi_listu($idL)
     {
         $lm = new ListaModel();
@@ -241,6 +307,14 @@ class Kupac extends BazniKontroler
         return redirect()->to(site_url("/Kupac/sacuvane_liste"));
     }
     
+    /**
+    * Prikaz stranice za pregled liste
+    *
+    * @param integer $idL idListe
+    *
+    * @return void
+    *
+    */
     public function pregledaj_listu($idListe=-1)
     {
         $lista = new ListaModel();
@@ -290,6 +364,14 @@ class Kupac extends BazniKontroler
         $this->show('pregledaj_listu', $data);
     }
     
+    /**
+    * Obrada dodavanja artikla na listu
+    *
+    * @param integer $idA idArtikla
+    *
+    * @return void
+    *
+    */
     public function dodaj_artikal($idArtikla)
     {
         
@@ -309,6 +391,14 @@ class Kupac extends BazniKontroler
         return redirect()->to(site_url("Kupac/pregledaj_listu/"));
     }
     
+    /**
+    * Uvecavanje broja elemenata na listi
+    *
+    * @param integer $idA idArtikla
+    *
+    * @return void
+    *
+    */
     public function uvecaj_artikal($idArtikla)
     {   
         $lis = $this->session->get("lista");
@@ -334,6 +424,14 @@ class Kupac extends BazniKontroler
         return redirect()->to(site_url("Kupac/pregledaj_listu/"));
     }
     
+    /**
+    * Umanjivanje broja elemenata na listi
+    *
+    * @param integer $idA idArtikla
+    *
+    * @return void
+    *
+    */
     public function umanji_artikal($idArtikla)
     {
         $lis = $this->session->get("lista");
@@ -359,6 +457,14 @@ class Kupac extends BazniKontroler
         return redirect()->to(site_url("Kupac/pregledaj_listu/"));
     }
     
+    /**
+    * Uklanjanje artikla sa liste
+    *
+    * @param integer $idA idArtikla
+    *
+    * @return void
+    *
+    */
     public function ukloni_artikal($idArtikla)
     {
         $lis = $this->session->get("lista");
@@ -377,6 +483,12 @@ class Kupac extends BazniKontroler
         return redirect()->to(site_url("Kupac/pregledaj_listu/"));
     }
     
+    /**
+    * Cuvanje liste u bazi podataka
+    *
+    * @return void
+    *
+    */
     public function sacuvaj_listu()
     {
         $naziv = $this->request->getVar("naziv");
@@ -421,6 +533,14 @@ class Kupac extends BazniKontroler
         return redirect()->to(site_url("Kupac/sacuvane_liste/"));
     }
     
+    /**
+    * Preuzima listu u obliku csv fajla
+    *
+    * @param integer $idL idListe
+    *
+    * @return void
+    *
+    */
     public function skini_listu($idL)
     {
         $sm = new SadrziModel();
@@ -437,10 +557,38 @@ class Kupac extends BazniKontroler
         exit();
     }
     
+    /**
+    * Obrada odjave korisnika sa sistema
+    *
+    * @return void
+    *
+    */
     public function odjavi_se()
     {
         $this->session->destroy();
         return redirect()->to(site_url("Gost/index/"));
+    }
+    
+    /**
+    * Dohvata artikle koji imaju tagove slicne onome sto je prosledjeno u requestu
+    *
+    * @return void
+    *
+    */
+    public function dohvati_artikle_kao()
+    {
+        $tags = $this->request->getVar("tags");
+        $am = new ArtikalModel();
+        $ar = $am->pretraga_tags($tags);
+        foreach ($ar as $a)
+        {
+            echo '<div class=\'result\' onclick=\'window.location.replace("';
+            echo site_url("Kupac/dodaj_artikal/{$a->idArtikla}");
+            echo '")\'>';
+            echo $a->naziv;
+            echo "</div>";
+        }
+        exit();
     }
     
 }
