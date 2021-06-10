@@ -36,7 +36,7 @@ class ListaModel extends Model
     *
     */
     public function pretraga_idK($idK) {
-        return $this->like('idKorisnik', $idK)->findAll();
+        return $this->where('idKorisnik', $idK)->findAll();
     }
         
 }

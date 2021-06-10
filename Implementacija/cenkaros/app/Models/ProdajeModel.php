@@ -36,7 +36,7 @@ class ProdajeModel extends Model
     *
     */
     public function pretraga_idR($idR) {  
-        return $this->like('idRadnje', $idR)->findAll();
+        return $this->where('idRadnje', $idR)->findAll();
     }
 
     /**
@@ -48,7 +48,7 @@ class ProdajeModel extends Model
     *
     */
     public function pretraga_idA($idA) {  
-        return $this->like('idArtikla', $idA)->findAll();
+        return $this->where('idArtikla', $idA)->findAll();
     }
     
     /**
@@ -61,7 +61,7 @@ class ProdajeModel extends Model
     *
     */
     public function pretraga_idA_idR($idA,$idR) {  
-        return $this->like('idArtikla', $idA)->like('idRadnje',$idR)->findAll();
+        return $this->where('idArtikla', $idA)->where('idRadnje',$idR)->findAll();
     }
         
 }

@@ -36,7 +36,7 @@ class SadrziModel extends Model
     *
     */
     public function pretraga_idL($idL) {
-        return $this->like('idListe', $idL)->findAll();
+        return $this->where('idListe', $idL)->findAll();
     }
 
     /**
@@ -48,7 +48,7 @@ class SadrziModel extends Model
     *
     */
     public function pretraga_idA($idA) {  
-        return $this->like('idArtikla', $idA)->findAll();
+        return $this->where('idArtikla', $idA)->findAll();
     }
         
 }

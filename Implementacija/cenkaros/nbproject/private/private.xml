@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/cenkaros/app/Views/pages/ispis.php</file>
+            <file>file:/C:/xampp/htdocs/cenkaros/app/Models/RadnjaModel.php</file>
+            <file>file:/C:/xampp/htdocs/cenkaros/app/Models/ListaModel.php</file>
+            <file>file:/C:/xampp/htdocs/cenkaros/app/Models/ArtikalModel.php</file>
+            <file>file:/C:/xampp/htdocs/cenkaros/app/Models/KorisnikModel.php</file>
+            <file>file:/C:/xampp/htdocs/cenkaros/app/Models/SadrziModel.php</file>
+            <file>file:/C:/xampp/htdocs/cenkaros/app/Models/ProdajeModel.php</file>
         </group>
     </open-files>
 </project-private>

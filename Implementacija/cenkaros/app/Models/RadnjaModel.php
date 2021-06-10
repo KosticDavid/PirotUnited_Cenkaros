@@ -36,7 +36,7 @@ class RadnjaModel extends Model
     *
     */
     public function pretraga_idK($idK) {  
-        return $this->like('idPredstavnika', $idK)->findAll();
+        return $this->where('idPredstavnika', $idK)->findAll();
     }
         
 }

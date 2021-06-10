@@ -1,0 +1,80 @@
+CRITICAL - 2021-06-08 18:58:07 --> Path cannot be empty
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(135): SplFileInfo->openFile('r')
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-08 18:59:04 --> Path cannot be empty
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(135): SplFileInfo->openFile('r')
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-08 19:01:00 --> Undefined array key 1
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 163)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-08 19:01:20 --> Attempt to read property "naziv" on null
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 334)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->pregledaj_listu()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-08 19:01:24 --> Attempt to read property "naziv" on null
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 334)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->pregledaj_listu()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-08 19:01:27 --> Attempt to read property "naziv" on null
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 334)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->pregledaj_listu()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-08 19:01:28 --> Attempt to read property "naziv" on null
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 334)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->pregledaj_listu()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-08 19:01:29 --> Attempt to read property "naziv" on null
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 334)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->pregledaj_listu()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-08 19:01:31 --> Attempt to read property "naziv" on null
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 334)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->pregledaj_listu()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-06-08 19:02:03 --> Undefined array key 1
+#0 C:\xampp\htdocs\cenkaros\app\Controllers\Kupac.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 163)
+#1 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Kupac->dodaj_automatski()
+#2 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kupac))
+#3 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cenkaros\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cenkaros\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
